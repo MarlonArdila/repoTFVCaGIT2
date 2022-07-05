@@ -1,0 +1,191 @@
+Found matching Visual Studio version at C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise
+TFS branches that could be cloned:
+ $/Implementaci¢n ALM Inspira CLARO/TestAutomation [*]
+ | 
+ +- $/Implementaci¢n ALM Inspira CLARO/TestAutomation-TestRama
+ $/Implementaci¢n ALM Inspira CLARO/Prueba [*]
+ | 
+ +- $/Implementaci¢n ALM Inspira CLARO/Prueba-TestRama2
+ $/Gesti¢n de Portafolio INSPIRA/Dev/GetDataVSTS [*]
+ | 
+ +- $/Gesti¢n de Portafolio INSPIRA/Dev/GetDataVSTSv2.0
+ $/Testing_Automation/VentasPrepago [*]
+ $/Testing_Automation/Everis.Automatizacion.Inspira [*]
+ $/Testing_Automation/Automatizacion_ClaroMGL [*]
+ | 
+ +- $/Testing_Automation/Charging/Automatizacion_Charging
+ |  | 
+ |  +- $/Testing_Automation/Charging/Automatizacion_Charging_Pruebas
+ $/Testing_Automation/JORobot Actualiza AZURE_CLM/Robot Actualiza AZURE [*]
+ $/Testing_Automation/Automatizacion_Sanity/Automatizacion_Sanity [*]
+ $/Testing_Automation/ReporteDefectos/ReporteDefectos [*]
+ $/Testing_Automation/CreacionTCAUT/CreacionTCAUT [*]
+ $/Testing_Automation/Creacion_insumos_servicios/Creacion_insumos_servicios [*]
+ $/Listas INSPIRA/Dev/Claro.ConsultLists [*]
+ $/Control Log¡stico INSPIRA/Everis.RGD.UI [*]
+ | 
+ +- $/Control Log¡stico INSPIRA/Everis.RGD.UIvDemo01
+ $/C5 Cloud INSPIRA/Dev/Claro.Gestion.Cloud [*]
+ | 
+ +- $/C5 Cloud INSPIRA/Release/Claro.Gestion.Cloud-Int
+ $/C5 Cloud INSPIRA/Dev/Claro.ClaroCloud [*]
+ $/C5 Cloud INSPIRA/Dev/Claro.Bug.Report [*]
+ $/C5 CUN INSPIRA/Dev/ClaroApps [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/ClaroApps-Int
+ $/C5 CUN INSPIRA/Dev/Telmex.Cun.Web [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/Telmex.Cun.Web-Int
+ $/C5 CUN INSPIRA/Dev/Telmex.CunAdmin.Ws [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/Telmex.CunAdmin.Ws-Int
+ $/C5 CUN INSPIRA/Dev/WSCunInspira [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/WSCunInspira-Int
+ $/C5 CUN INSPIRA/Dev/AdministraOperador [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/AdministraOperador-Int
+ $/C5 CUN INSPIRA/Dev/InspiraCun [*]
+ | 
+ +- $/C5 CUN INSPIRA/Release/InspiraCun-Int
+ $/C5 CUN INSPIRA/Dev/Claro.AdmGenCun.Insp [*]
+ $/C5 CUN INSPIRA/Dev/Claro.Cun.Reports [*]
+ $/C5 CUN INSPIRA/Produccion/Claro.AdmGenCun.Insp [*]
+ $/C5 CUN INSPIRA/UAT/Claro.AdmGenCun.Insp [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Gestion.Imei [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Inspira.Tools [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.MiClaro [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.ConfirmationData [*]
+ $/C15 SERVICIOS CRM INSPIRA/Main [*]
+ | 
+ +- $/C15 SERVICIOS CRM INSPIRA/Release
+ |  | 
+ |  +- $/C15 SERVICIOS CRM INSPIRA/CloseAttentionChannelTypeCode
+ |  | 
+ |  +- $/C15 SERVICIOS CRM INSPIRA/Soporte
+ |  |  | 
+ |  |  +- $/C15 SERVICIOS CRM INSPIRA/FU
+ |  |  | 
+ |  |  +- $/C15 SERVICIOS CRM INSPIRA/Soporte-Solucion
+ |  |  | 
+ |  |  +- $/C15 SERVICIOS CRM INSPIRA/UAT
+ |  |  |  | 
+ |  |  |  +- $/C15 SERVICIOS CRM INSPIRA/UAT-94314
+ |  |  |  | 
+ |  |  |  +- $/C15 SERVICIOS CRM INSPIRA/cardenaslb/defect91768
+ $/C1 Dijin INSPIRA/QA [*]
+ | 
+ +- $/C1 Dijin INSPIRA/DEV
+ $/C5 Componente Traductor/Develop [*]
+ $/C5 Componente Traductor/Main [*]
+ $/C5 Componente Traductor/Release [*]
+ $/C5 Garantias/Dev/Claro.Warranty.Notifications [*]
+ | 
+ +- $/C5 Garantias/Prod/Claro.Warranty.Notifications
+ | 
+ +- $/C5 Garantias/UAT/Claro.Warranty.Notifications
+ $/C5 Garantias/Dev/Claro.Warranty [*]
+ | 
+ +- $/C5 Garantias/Prod/Claro.Warranty
+ | 
+ +- $/C5 Garantias/UAT/Claro.Warranty
+ $/C5 Claro.PostSale/Claro.PostsaleInsp [*]
+ | 
+ +- $/C5 Claro.PostSale/Dev/Claro.PostsaleInsp
+ | 
+ +- $/C5 Claro.PostSale/Prod/Claro.PostsaleInsp
+ | 
+ +- $/C5 Claro.PostSale/UAT/Claro.PostsaleInsp
+ $/C5 Claro.PostSale/Desarrollo [*]
+ | 
+ +- $/C5 Claro.PostSale/Dev/Claro.PostSale
+ | 
+ +- $/C5 Claro.PostSale/Prod/Claro.PostSale
+ | 
+ +- $/C5 Claro.PostSale/UAT/Claro.PostSale
+ $/C5 Claro.PostSale/Main [*]
+ $/C5 Claro.PostSale/Pruebas [*]
+ $/C5 Claro.PostSale/Dev/Claro.PostsaleInspTEMPDEV [*]
+ $/C5 ListasInternas INSPIRA/Dev/Claro.Consult [*]
+ $/C5 PIN INSPIRA/Dev/GeneracionPin.Monitoreo [*]
+ $/C5 PIN INSPIRA/Dev/GeneracionPin.Report [*]
+ $/C5 PIN INSPIRA/Dev/GeneracionPin_F4 [*]
+ | 
+ +- $/C5 PIN INSPIRA/Release/GeneracionPin_F4-Int
+ $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V2 [*]
+ | 
+ +- $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V2-12062020
+ | 
+ +- $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V2-13032020
+ | 
+ +- $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V2B
+ | 
+ +- $/C5 PIN INSPIRA/Dev/GeneracionPinV30
+ |  | 
+ |  +- $/C5 PIN INSPIRA/Prod/GeneracionPinV30
+ | 
+ +- $/C5 PIN INSPIRA/Dev/ProyectosClaro
+ $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V3 [*]
+ | 
+ +- $/C5 PIN INSPIRA/Dev/GeneracionPin_F4_V4
+ |  | 
+ |  +- $/C5 PIN INSPIRA/Dev/GeneracionPinV40
+ |  |  | 
+ |  |  +- $/C5 PIN INSPIRA/Prod/GeneracionPinV40
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin.Report [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4 [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4_V2-12062020 [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4_V2-13032020 [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4_V2 [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4_V2B [*]
+ $/C5 PIN INSPIRA/Soporte/GeneracionPin_F4_V3 [*]
+ $/C1 Turnos INSPIRA/Main [*]
+ | 
+ +- $/C1 Turnos INSPIRA/Desarrollo
+ |  | 
+ |  +- $/C1 Turnos INSPIRA/Operacion
+ |  |  | 
+ |  |  +- $/C1 Turnos INSPIRA/Operacion-250-251
+ |  |  | 
+ |  |  +- $/C1 Turnos INSPIRA/Versio3092_integracionPU
+ |  |  |  | 
+ |  |  |  +- $/C1 Turnos INSPIRA/PU-250-251
+ |  | 
+ |  +- $/C1 Turnos INSPIRA/TurnosApp
+ |  |  | 
+ |  |  +- $/C1 Turnos INSPIRA/MiClaroApp
+ | 
+ +- $/C1 Turnos INSPIRA/Soporte
+ $/C1 Turnos INSPIRA/TurnosWeb [*]
+ $/C5-Reportes Turnos/Develop [*]
+ $/C5-Reportes Turnos/Produccion [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Gestion.Imei - DEV [*]
+ | 
+ +- $/C5 IMEI INSPIRA/Release/Claro.Gestion.Imei-Int
+ $/C5 IMEI INSPIRA/Dev/Claro.Gestion.Imei - PROD [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Gestion.Imei - UAT [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Autoatencion - DEV [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Autoatencion - PROD [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Autoatencion - UAT [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Procesos - DEV [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Procesos - PROD [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Procesos - UAT [*]
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Tools - UAT [*]
+ | 
+ +- $/C5 IMEI INSPIRA/Dev/Claro.Imei.Tools- DEV
+ $/C5 IMEI INSPIRA/Dev/Claro.Imei.Tools- PRD [*]
+ $/C5 IMEI INSPIRA/Main/Claro.ConfirmationData [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Gestion.Imei - PROD [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Imei.Autoatencion [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Imei.Procesos [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Imei.Tools - PROD [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Imei.Tools [*]
+ $/C5 IMEI INSPIRA/Main/Claro.Inspira.Tools [*]
+ $/C5 IMEI INSPIRA/Main/Claro.MiClaro [*]
+ $/C5 IMEI MASIVAS/Develop [*]
+ | 
+ +- $/C5 IMEI MASIVAS/Produccion
+ $/C5 IMEI MASIVAS/Master [*]
+ $/C5 IMEI MASIVAS/Pruebas [*]
+ $/Extracci¢n de Datos/DEV/ApiDataExtraction [*]
+Cloning root branches (marked by [*]) is recommended!
