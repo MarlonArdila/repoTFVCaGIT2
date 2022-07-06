@@ -1,0 +1,3 @@
+<LinkTypes>
+  <LinkType ReferenceName="Microsoft.VSTS.TestCase.SharedParameterReferencedBy" ForwardName="Referenced By" ReverseName="References" Topology="Dependency" />
+</LinkTypes>

@@ -1,0 +1,3 @@
+<LinkTypes>
+  <LinkType ReferenceName="Microsoft.VSTS.TestCase.SharedStepReferencedBy" ForwardName="Test Case" ReverseName="Shared Steps" Topology="Dependency" />
+</LinkTypes>

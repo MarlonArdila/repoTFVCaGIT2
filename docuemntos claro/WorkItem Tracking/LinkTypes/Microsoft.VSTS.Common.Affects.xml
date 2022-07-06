@@ -1,0 +1,3 @@
+<LinkTypes>
+  <LinkType ReferenceName="Microsoft.VSTS.Common.Affects" ForwardName="Affects" ReverseName="Affected By" Topology="Dependency" />
+</LinkTypes>

@@ -1,0 +1,1634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Orden de Trabajo" refname="Custom.OrdendeTrabajo">
+    <DESCRIPTION>Tracks work that needs to be done.</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Iteration ID" refname="System.IterationId" type="Integer" />
+      <FIELD name="External Link Count" refname="System.ExternalLinkCount" type="Integer" />
+      <FIELD name="Team Project" refname="System.TeamProject" type="String" reportable="dimension" />
+      <FIELD name="Parent" refname="System.Parent" type="Integer" />
+      <FIELD name="Remote Link Count" refname="System.RemoteLinkCount" type="Integer" />
+      <FIELD name="Comment Count" refname="System.CommentCount" type="Integer" />
+      <FIELD name="Hyperlink Count" refname="System.HyperLinkCount" type="Integer" />
+      <FIELD name="Attached File Count" refname="System.AttachedFileCount" type="Integer" />
+      <FIELD name="Node Name" refname="System.NodeName" type="String" />
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Revised Date" refname="System.RevisedDate" type="DateTime" reportable="detail" />
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Area ID" refname="System.AreaId" type="Integer" />
+      <FIELD name="Authorized As" refname="System.AuthorizedAs" type="String" syncnamechanges="true" />
+      <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension" />
+      <FIELD name="Authorized Date" refname="System.AuthorizedDate" type="DateTime" />
+      <FIELD name="Watermark" refname="System.Watermark" type="Integer" />
+      <FIELD name="Rev" refname="System.Rev" type="Integer" reportable="dimension" />
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension" />
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>The person currently owning this task</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Work Item Type" refname="System.WorkItemType" type="String" reportable="dimension" />
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
+      <FIELD name="Description" refname="System.Description" type="HTML">
+        <WHENNOT field="System.State" value="To Do">
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="History" refname="System.History" type="History" />
+      <FIELD name="Related Link Count" refname="System.RelatedLinkCount" type="Integer" />
+      <FIELD name="Tags" refname="System.Tags" type="PlainText" />
+      <FIELD name="Board Column" refname="System.BoardColumn" type="String" reportable="dimension" />
+      <FIELD name="Board Column Done" refname="System.BoardColumnDone" type="Boolean" reportable="dimension" />
+      <FIELD name="Board Lane" refname="System.BoardLane" type="String" reportable="dimension" />
+      <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
+        <HELPTEXT>Importance to business</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="2" />
+      </FIELD>
+      <FIELD name="Remaining Work" refname="Microsoft.VSTS.Scheduling.RemainingWork" type="Double" reportable="measure" formula="sum">
+        <HELPTEXT>An estimate of the number of units of work remaining to complete this task</HELPTEXT>
+      </FIELD>
+      <FIELD name="Backlog Priority" refname="Microsoft.VSTS.Common.BacklogPriority" type="Double" reportable="detail" />
+      <FIELD name="Activity" refname="Microsoft.VSTS.Common.Activity" type="String" reportable="dimension">
+        <HELPTEXT>Type of work involved</HELPTEXT>
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="Deployment" />
+          <LISTITEM value="Design" />
+          <LISTITEM value="Development" />
+          <LISTITEM value="Documentation" />
+          <LISTITEM value="Requirements" />
+          <LISTITEM value="Testing" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated Date" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated By" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="ID Previo" refname="Claro.ALM.IdPrevio" type="Integer" reportable="detail">
+        <READONLY />
+      </FIELD>
+      <FIELD name="Sub Estado" refname="Claro.ALM.SubEstado" type="String" reportable="detail">
+        <HELPTEXT>Sub Estado</HELPTEXT>
+        <REQUIRED />
+        <WHEN field="System.State" value="Removed">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTSubEstadoRemoved" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTSubEstadoDone" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="In Progress">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTSubEstadoInProgress" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="To Do">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTSubEstadoToDo" />
+          </ALLOWEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD name="Bloqueado" refname="Claro.ALM.Bloqueado" type="String" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Yes" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Centro de costo" refname="Claro.ALM.CentroCosto" type="String" reportable="dimension">
+        <HELPTEXT>Centro de costo</HELPTEXT>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Creada">
+          <REQUIRED />
+        </WHENNOT>
+        <WHENNOT field="System.State" value="To Do">
+          <READONLY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTCentroCosto" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Discipline" refname="Microsoft.VSTS.Common.Discipline" type="String" reportable="dimension">
+        <HELPTEXT>Disciplina a la que pertenece la orden de trabajo</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTDisciplina" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <WHENNOT field="System.State" value="To Do">
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Gerencia Paga OT" refname="Claro.ALM.GerenciaPagaOT" type="String" reportable="dimension">
+        <HELPTEXT>Gerencia asociada a la orden de trabajo</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="GdPGerencia" />
+          <LISTITEM value="ARQUITECTURA" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <WHENNOT field="System.State" value="To Do">
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Tipo de OT" refname="Claro.ALM.TipoOT" type="String" reportable="dimension">
+        <HELPTEXT>Tipo de orden de trabajo asociada a la disciplina</HELPTEXT>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Desarrollo">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTTipoDesarrollo" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Requerimientos">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTTipoRequerimientos" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="OTTipoPruebas" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <REQUIRED />
+        <WHENNOT field="System.State" value="To Do">
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Horas planeadas" refname="Claro.ALM.HorasPlaneadas" type="Double" reportable="dimension">
+        <HELPTEXT>Horas planeadas</HELPTEXT>
+        <WHENNOT field="System.State" value="To Do">
+          <REQUIRED />
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Dias" refname="Claro.ALM.Dias" type="Integer" reportable="dimension">
+        <HELPTEXT>Dias</HELPTEXT>
+        <WHENNOT field="System.State" value="To Do">
+          <REQUIRED />
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Proveedor macro-estima" refname="Claro.ALM.ProveedorMacroEstima" type="String" reportable="dimension">
+        <HELPTEXT>Proveedor</HELPTEXT>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Desarrollo">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPProveedorDesarrollo" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Requerimientos">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPProveedorRequerimientos" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPProveedorPruebas" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHENNOT field="System.State" value="To Do">
+          <REQUIRED />
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Valor hora" refname="Claro.ALM.ValorHora" type="Integer" reportable="dimension">
+        <HELPTEXT>Valor hora</HELPTEXT>
+        <WHENNOT field="System.State" value="To Do">
+          <REQUIRED />
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Talla alto nivel" refname="Claro.ALM.TallaAltoNivel" type="String" reportable="dimension">
+        <HELPTEXT>Talla alto nivel</HELPTEXT>
+        <DEFAULT from="value" value="S" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTTallaAltoNivel" />
+        </ALLOWEDVALUES>
+        <WHENNOT field="System.State" value="To Do">
+          <REQUIRED />
+          <READONLY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Dentro del alcance" refname="Claro.ALM.DentroAlcance" type="HTML">
+        <HELPTEXT>Dentro del alcance</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fuera del alcance" refname="Claro.ALM.FueraAlcance" type="HTML">
+        <HELPTEXT>Fuera del alcance</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas Claro" refname="Claro.ALM.HorasClaro" type="Double" reportable="dimension">
+        <HELPTEXT>Horas Claro</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas proveedor" refname="Claro.ALM.HorasProveedor" type="Double" reportable="dimension">
+        <HELPTEXT>Horas proveedor</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas acordadas" refname="Claro.ALM.HorasAcordadas" type="Double" reportable="dimension">
+        <HELPTEXT>Horas acordadas</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Talla detalle" refname="Claro.ALM.TallaDetalle" type="String" reportable="dimension">
+        <HELPTEXT>Talla detalle</HELPTEXT>
+        <DEFAULT from="value" value="S" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTTallaDetalle" />
+        </ALLOWEDVALUES>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fecha inicio Prueba/Desarrollo" refname="Claro.ALM.FechaInicioPruebaDesarrollo" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha inicio Prueba/Desarrollo</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fecha fin Prueba/Desarrollo" refname="Claro.ALM.FechaFinPruebaDesarrollo" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha fin Prueba/Desarrollo</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fecha compromiso entrega a Testing" refname="Claro.ALM.FechaCompromisoEntregaTesting" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha compromiso entrega a Testing.  Si la Linea de Producto correspondiente no se envía a Testing, indique la misma Fecha fin</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Desarrollo">
+          <READONLY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Proveedor Ejecutor" refname="Claro.ALM.ProveedorEjecutor" type="String" reportable="dimension">
+        <HELPTEXT>Proveedor Ejecutor de Pruebas</HELPTEXT>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Desarrollo">
+          <READONLY />
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPProveedorDesarrollo" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Requerimientos">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPProveedorPruebas" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Clase de presupuesto" refname="Claro.ALM.ClasePresupuesto" type="String" reportable="dimension">
+        <HELPTEXT>Clase de presupuesto</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTClasePresupuesto" />
+        </ALLOWEDVALUES>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Cantidad de analistas" refname="Claro.ALM.CantidadAnalistas" type="Integer" reportable="dimension">
+        <HELPTEXT>Cantidad de analistas</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Porcentaje de incertidumbre" refname="Claro.ALM.PorcentajeIncertidumbre" type="Integer" reportable="dimension">
+        <HELPTEXT>Porcentaje de incertidumbre</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Trabajo efectivo" refname="Claro.ALM.TrabajoEfectivo" type="Double" reportable="dimension">
+        <HELPTEXT>Trabajo efectivo</HELPTEXT>
+      </FIELD>
+      <FIELD name="Cantidad de reclamos" refname="Claro.ALM.CantidadReclamos" type="Integer" reportable="dimension">
+        <HELPTEXT>Cantidad de reclamos</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fecha paquete 1" refname="Claro.ALM.FechaPaquete1" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha paquete 1</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Entrega paquete 1" refname="Claro.ALM.EntregaPaquete1" type="String" reportable="dimension">
+        <DEFAULT from="value" value="No" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTEntregaPaquete" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Fecha entrega paquete 1" refname="Claro.ALM.FechaEntregaPaquete1" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha entrega paquete 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha paquete 2" refname="Claro.ALM.FechaPaquete2" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha paquete 2</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Entrega paquete 2" refname="Claro.ALM.EntregaPaquete2" type="String" reportable="dimension">
+        <DEFAULT from="value" value="No" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTEntregaPaquete" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Fecha entrega paquete 2" refname="Claro.ALM.FechaEntregaPaquete2" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha entrega paquete 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha paquete 3" refname="Claro.ALM.FechaPaquete3" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha paquete 3</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Entrega paquete 3" refname="Claro.ALM.EntregaPaquete3" type="String" reportable="dimension">
+        <DEFAULT from="value" value="No" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTEntregaPaquete" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Fecha entrega paquete 3" refname="Claro.ALM.FechaEntregaPaquete3" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha entrega paquete 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Fecha paquete 4" refname="Claro.ALM.FechaPaquete4" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha paquete 4</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Entrega paquete 4" refname="Claro.ALM.EntregaPaquete4" type="String" reportable="dimension">
+        <DEFAULT from="value" value="No" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTEntregaPaquete" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Fecha entrega paquete 4" refname="Claro.ALM.FechaEntregaPaquete4" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha entrega paquete 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas optimistas" refname="Claro.ALM.HorasOptimistas" type="Double" reportable="dimension">
+        <HELPTEXT>Horas optimistas</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Días optimistas" refname="Claro.ALM.DiasOptimistas" type="Integer" reportable="dimension">
+        <HELPTEXT>Días optimistas</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Fecha fin optimista" refname="Claro.ALM.FechaFinOptimista" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha fin optimista</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Días pesimistas" refname="Claro.ALM.DiasPesimistas" type="Integer" reportable="dimension">
+        <HELPTEXT>Días pesimistas</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas pesimistas planeación" refname="Claro.ALM.HorasPesimistasPlaneacion" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pesimistas planeación</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas pesimistas diseño" refname="Claro.ALM.HorasPesimistasDiseno" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pesimistas diseño</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas pesimistas ejecución" refname="Claro.ALM.HorasPesimistasEjecucion" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pesimistas ejecución</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Horas pesimistas cierre" refname="Claro.ALM.HorasPesimistasCierre" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pesimistas cierre</HELPTEXT>
+        <WHENNOT field="Microsoft.VSTS.Common.Discipline" value="Pruebas">
+          <EMPTY />
+        </WHENNOT>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <READONLY />
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <READONLY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Rating entrega 1" refname="Claro.ALM.RatingEntrega1" type="Double" reportable="dimension">
+        <HELPTEXT>Rating entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Rating entrega 2" refname="Claro.ALM.RatingEntrega2" type="Double" reportable="dimension">
+        <HELPTEXT>Rating entrega 2</HELPTEXT>
+        <WHEN field="Claro.ALM.TallaDetalle" value="S">
+          <EMPTY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Rating entrega 3" refname="Claro.ALM.RatingEntrega3" type="Double" reportable="dimension">
+        <HELPTEXT>Rating entrega 3</HELPTEXT>
+        <WHEN field="Claro.ALM.TallaDetalle" value="S">
+          <EMPTY />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Rating entrega 4" refname="Claro.ALM.RatingEntrega4" type="Double" reportable="dimension">
+        <HELPTEXT>Rating entrega 4</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TallaDetalle" value="XL">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Rating entrega final" refname="Claro.ALM.RatingEntregaFinal" type="Double" reportable="dimension">
+        <HELPTEXT>Rating entrega final</HELPTEXT>
+      </FIELD>
+      <FIELD name="Facturable entrega 1" refname="Claro.ALM.FacturableEntrega1" type="String" reportable="dimension">
+        <HELPTEXT>Facturable entrega 1</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTFacturableEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Facturable entrega 2" refname="Claro.ALM.FacturableEntrega2" type="String" reportable="dimension">
+        <HELPTEXT>Facturable entrega 2</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTFacturableEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Facturable entrega 3" refname="Claro.ALM.FacturableEntrega3" type="String" reportable="dimension">
+        <HELPTEXT>Facturable entrega 3</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTFacturableEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Facturable entrega 4" refname="Claro.ALM.FacturableEntrega4" type="String" reportable="dimension">
+        <HELPTEXT>Facturable entrega 4</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTFacturableEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Comodin 1" refname="Claro.ALM.Comodin1" type="String" />
+      <FIELD name="Comodin 2" refname="Claro.ALM.Comodin2" type="String" />
+      <FIELD name="Comodin 3" refname="Claro.ALM.Comodin3" type="String" />
+      <FIELD name="Comodin 4" refname="Claro.ALM.Comodin4" type="String" />
+      <FIELD name="Comodin 5" refname="Claro.ALM.Comodin5" type="String" />
+      <FIELD name="Comodin 6" refname="Claro.ALM.Comodin6" type="String" />
+      <FIELD name="Comodin 7" refname="Claro.ALM.Comodin7" type="String" />
+      <FIELD name="Comodin 8" refname="Claro.ALM.Comodin8" type="String" />
+      <FIELD name="Pagada entrega 1" refname="Claro.ALM.PagadaEntrega1" type="String" reportable="dimension">
+        <HELPTEXT>Pagada entrega 1</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTPagadaEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Pagada entrega 2" refname="Claro.ALM.PagadaEntrega2" type="String" reportable="dimension">
+        <HELPTEXT>Pagada entrega 2</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTPagadaEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Pagada entrega 3" refname="Claro.ALM.PagadaEntrega3" type="String" reportable="dimension">
+        <HELPTEXT>Pagada entrega 3</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTPagadaEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Pagada entrega 4" refname="Claro.ALM.PagadaEntrega4" type="String" reportable="dimension">
+        <HELPTEXT>Pagada entrega 4</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="OTPagadaEntrega" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Horas pagadas 1 entrega 1" refname="Claro.ALM.HorasPagadas1Entrega1" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 1 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 2 entrega 1" refname="Claro.ALM.HorasPagadas2Entrega1" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 2 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 3 entrega 1" refname="Claro.ALM.HorasPagadas3Entrega1" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 3 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 1 entrega 2" refname="Claro.ALM.HorasPagadas1Entrega2" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 1 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 2 entrega 2" refname="Claro.ALM.HorasPagadas2Entrega2" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 2 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 3 entrega 2" refname="Claro.ALM.HorasPagadas3Entrega2" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 3 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 1 entrega 3" refname="Claro.ALM.HorasPagadas1Entrega3" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 1 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 2 entrega 3" refname="Claro.ALM.HorasPagadas2Entrega3" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 2 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 3 entrega 3" refname="Claro.ALM.HorasPagadas3Entrega3" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 3 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 1 entrega 4" refname="Claro.ALM.HorasPagadas1Entrega4" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 1 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 2 entrega 4" refname="Claro.ALM.HorasPagadas2Entrega4" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 2 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Horas pagadas 3 entrega 4" refname="Claro.ALM.HorasPagadas3Entrega4" type="Double" reportable="dimension">
+        <HELPTEXT>Horas pagadas 3 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 1 entrega 1" refname="Claro.ALM.OrdenCompra1Entrega1" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 1 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 2 entrega 1" refname="Claro.ALM.OrdenCompra2Entrega1" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 2 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 3 entrega 1" refname="Claro.ALM.OrdenCompra3Entrega1" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 3 entrega 1</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 1 entrega 2" refname="Claro.ALM.OrdenCompra1Entrega2" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 1 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 2 entrega 2" refname="Claro.ALM.OrdenCompra2Entrega2" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 2 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 3 entrega 2" refname="Claro.ALM.OrdenCompra3Entrega2" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 3 entrega 2</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 1 entrega 3" refname="Claro.ALM.OrdenCompra1Entrega3" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 1 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 2 entrega 3" refname="Claro.ALM.OrdenCompra2Entrega3" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 2 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 3 entrega 3" refname="Claro.ALM.OrdenCompra3Entrega3" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 3 entrega 3</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 1 entrega 4" refname="Claro.ALM.OrdenCompra1Entrega4" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 1 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 2 entrega 4" refname="Claro.ALM.OrdenCompra2Entrega4" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 2 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="Orden de compra 3 entrega 4" refname="Claro.ALM.OrdenCompra3Entrega4" type="String" reportable="dimension">
+        <HELPTEXT>Orden de compra 3 entrega 4</HELPTEXT>
+      </FIELD>
+      <FIELD name="SECreadaPor" refname="Claro.ALM.SECreadaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECreadaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEAsignadaAltoNivelPor" refname="Claro.ALM.SEAsignadaAltoNivelPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEAsignadaAltoNivelFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEEstimadaPor" refname="Claro.ALM.SEEstimadaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEEstimadaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEAsignadaDetallePor" refname="Claro.ALM.SEAsignadaDetallePor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEAsignadaDetalleFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEEstimadaxAprobarPor" refname="Claro.ALM.SEEstimadaxAprobarPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEEstimadaxAprobarFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEAprobadaPor" refname="Claro.ALM.SEAprobadaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEAprobadaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEFinalizadaPor" refname="Claro.ALM.SEFinalizadaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEFinalizadaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SECanceladaPor" refname="Claro.ALM.SECanceladaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECanceladaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SECreadaFecha_chk" refname="Claro.ALM.SECreadaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Creada">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Creada">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECreadaFecha" refname="Claro.ALM.SECreadaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECreadaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEAsignadaAltoNivelFecha_chk" refname="Claro.ALM.SEAsignadaAltoNivelFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Asignada Alto Nivel">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Asignada Alto Nivel">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEAsignadaAltoNivelFecha" refname="Claro.ALM.SEAsignadaAltoNivelFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEAsignadaAltoNivelFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEEstimadaFecha_chk" refname="Claro.ALM.SEEstimadaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Estimada">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEEstimadaFecha" refname="Claro.ALM.SEEstimadaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEEstimadaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEAsignadaDetalleFecha_chk" refname="Claro.ALM.SEAsignadaDetalleFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Asignada Detalle">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Asignada Detalle">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEAsignadaDetalleFecha" refname="Claro.ALM.SEAsignadaDetalleFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEAsignadaDetalleFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEEstimadaxAprobarFecha_chk" refname="Claro.ALM.SEEstimadaxAprobarFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Estimada por Aprobar">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEEstimadaxAprobarFecha" refname="Claro.ALM.SEEstimadaxAprobarFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEEstimadaxAprobarFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEAprobada_chk" refname="Claro.ALM.SEAprobadaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobada">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Aprobada">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEAprobadaFecha" refname="Claro.ALM.SEAprobadaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEAprobadaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEFinalizadaFecha_chk" refname="Claro.ALM.SEFinalizadaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Finalizada">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Finalizada">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEFinalizadaFecha" refname="Claro.ALM.SEFinalizadaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEFinalizadaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECanceladaFecha_chk" refname="Claro.ALM.SECanceladaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Cancelada">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Cancelada">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECanceladaFecha" refname="Claro.ALM.SECanceladaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECanceladaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Done">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Claro.ALM.Bloqueado">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Scheduling.RemainingWork">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="In Progress">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Removed">
+          <FIELDS>
+            <FIELD refname="Claro.ALM.Bloqueado">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Scheduling.RemainingWork">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="To Do">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="In Progress" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Additional work found" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Work started" />
+          </REASONS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StartWork" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="Removed" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Reconsidering the Task" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Additional work found" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Work stopped" />
+          </REASONS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StopWork" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Claro.ALM.SubEstado">
+              <COPY from="value" value="Creada" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="90">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
+          </Column>
+          <Column PercentWidth="10">
+            <Control FieldName="System.ID" Type="FieldControl" ControlFontSize="large" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="Ite&amp;ration" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Assi&amp;gned To" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="Stat&amp;e" LabelPosition="Left" />
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="&amp;Area" LabelPosition="Left" />
+                <Control FieldName="System.Reason" Type="FieldControl" Label="Reason" LabelPosition="Left" ReadOnly="True" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Details">
+              <Column PercentWidth="100">
+                <Control FieldName="Microsoft.VSTS.Common.Priority" Type="FieldControl" Label="Priority" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.RemainingWork" Type="FieldControl" Label="Remaining Work" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.Activity" Type="FieldControl" Label="Activity" LabelPosition="Left" />
+                <Control FieldName="Claro.ALM.Bloqueado" Type="FieldControl" Label="Blocked" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <TabGroup>
+              <Tab Label="Description">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="50">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="History">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Links">
+                <Control Type="LinksControl" Label="" LabelPosition="Top" Name="GeneralLinks">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Attachments">
+                <Control Type="AttachmentsControl" Label="" LabelPosition="Top" />
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+      <WebLayout>
+        <SystemControls>
+          <Control Type="FieldControl" FieldName="System.Title" EmptyText="OT de &lt;Disciplina&gt;" />
+          <Control Label="Assi&amp;gned To" Type="FieldControl" FieldName="System.AssignedTo" />
+          <Control Label="Stat&amp;e" Type="FieldControl" FieldName="System.State" />
+          <Control Label="Reason" Type="FieldControl" FieldName="System.Reason" />
+          <Control Label="&amp;Area" Type="WorkItemClassificationControl" FieldName="System.AreaPath" />
+          <Control Label="Ite&amp;ration" Type="WorkItemClassificationControl" FieldName="System.IterationPath" />
+          <Control Label="History" Type="WorkItemLogControl" FieldName="System.History" />
+          <Control Label="Links" Type="LinksControl" Name="Links" />
+          <Control Label="Attachments" Type="AttachmentsControl" Name="Attachments" />
+        </SystemControls>
+        <Page Label="General" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Control">
+              <Control Label="ID Previo:" Type="FieldControl" FieldName="Claro.ALM.IdPrevio" />
+              <Control Label="Sub Estado:" Type="FieldControl" FieldName="Claro.ALM.SubEstado" />
+            </Group>
+            <Group Label="Descripción">
+              <Control Label="Descripción" Type="HtmlFieldControl" FieldName="System.Description" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Clasificación">
+              <Control Label="Disciplina" Type="FieldControl" FieldName="Microsoft.VSTS.Common.Discipline" />
+              <Control Label="Tipo de OT" Type="FieldControl" FieldName="Claro.ALM.TipoOT" />
+              <Control Label="Gerencia Paga OT" Type="FieldControl" FieldName="Claro.ALM.GerenciaPagaOT" />
+              <Control Label="Centro de Costo" Type="FieldControl" FieldName="Claro.ALM.CentroCosto" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Ultimas Fechas Sub-Estados" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Fechas-Sub-Estados">
+              <Control Label="Fecha Creada" Type="FieldControl" FieldName="Claro.ALM.SECreadaFecha" ReadOnly="True" />
+              <Control Label="Fecha Asignada Alto Nivel" Type="FieldControl" FieldName="Claro.ALM.SEAsignadaAltoNivelFecha" ReadOnly="True" />
+              <Control Label="Fecha Estimada" Type="FieldControl" FieldName="Claro.ALM.SEEstimadaFecha" ReadOnly="True" />
+              <Control Label="Fecha Asignada Detalle" Type="FieldControl" FieldName="Claro.ALM.SEAsignadaDetalleFecha" ReadOnly="True" />
+              <Control Label="Fecha Estimada por Aprobar" Type="FieldControl" FieldName="Claro.ALM.SEEstimadaxAprobarFecha" ReadOnly="True" />
+              <Control Label="Fecha Aprobada" Type="FieldControl" FieldName="Claro.ALM.SEAprobadaFecha" ReadOnly="True" />
+              <Control Label="Fecha Finalizada" Type="FieldControl" FieldName="Claro.ALM.SEFinalizadaFecha" ReadOnly="True" />
+              <Control Label="Fecha Cancelada" Type="FieldControl" FieldName="Claro.ALM.SECanceladaFecha" ReadOnly="True" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Usuario-Sub-Estados">
+              <Control Label="Creada Por" Type="FieldControl" FieldName="Claro.ALM.SECreadaPor" ReadOnly="True" />
+              <Control Label="Asignada Alto Nivel Por" Type="FieldControl" FieldName="Claro.ALM.SEAsignadaAltoNivelPor" ReadOnly="True" />
+              <Control Label="Estimada Por" Type="FieldControl" FieldName="Claro.ALM.SEEstimadaPor" ReadOnly="True" />
+              <Control Label="Asignada Detalle Por" Type="FieldControl" FieldName="Claro.ALM.SEAsignadaDetallePor" ReadOnly="True" />
+              <Control Label="Estimada por Aprobar Por" Type="FieldControl" FieldName="Claro.ALM.SEEstimadaxAprobarPor" ReadOnly="True" />
+              <Control Label="Aprobada Por" Type="FieldControl" FieldName="Claro.ALM.SEAprobadaPor" ReadOnly="True" />
+              <Control Label="Finalizada Por" Type="FieldControl" FieldName="Claro.ALM.SEFinalizadaPor" ReadOnly="True" />
+              <Control Label="Cancelada Por" Type="FieldControl" FieldName="Claro.ALM.SECanceladaPor" ReadOnly="True" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Estimación Alto Nivel" LayoutMode="EqualColumns">
+          <Section>
+            <Group Label="Estimación">
+              <Control Label="Valores decimales" Type="LabelControl">
+                <LabelText>
+                  <Text>Revise las cifras decimales luego de guardar. Utilice el separador decimal acorde al idioma definido en la configuracion regional de su perfil de TFS.
+                </Text>
+                </LabelText>
+              </Control>
+              <Control Label="Horas planeadas" Type="FieldControl" FieldName="Claro.ALM.HorasPlaneadas" />
+              <Control Label="Días" Type="FieldControl" FieldName="Claro.ALM.Dias" />
+              <Control Label="Proveedor macro-estima" Type="FieldControl" FieldName="Claro.ALM.ProveedorMacroEstima" />
+              <Control Label="Valor hora ($ COL)" Type="FieldControl" FieldName="Claro.ALM.ValorHora" />
+              <Control Label="Talla" Type="FieldControl" FieldName="Claro.ALM.TallaAltoNivel" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Estimación Detallada" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Estimación Detallada">
+              <Control Label="Valores decimales" Type="LabelControl">
+                <LabelText>
+                  <Text>Revise las cifras decimales luego de guardar. Utilice el separador decimal acorde al idioma definido en la configuracion regional de su perfil de TFS.
+                </Text>
+                </LabelText>
+              </Control>
+            </Group>
+            <Group Label="Dentro del alcance">
+              <Control Label="Dentro del alcance" Type="HtmlFieldControl" FieldName="Claro.ALM.DentroAlcance" />
+            </Group>
+            <Group Label="Fuera del alcance">
+              <Control Label="Fuera del alcance" Type="HtmlFieldControl" FieldName="Claro.ALM.FueraAlcance" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Horas">
+              <Control Label="Horas Claro" Type="FieldControl" FieldName="Claro.ALM.HorasClaro" />
+              <Control Label="Horas proveedor" Type="FieldControl" FieldName="Claro.ALM.HorasProveedor" />
+              <Control Label="Horas acordadas" Type="FieldControl" FieldName="Claro.ALM.HorasAcordadas" />
+              <Control Label="Talla" Type="FieldControl" FieldName="Claro.ALM.TallaDetalle" />
+            </Group>
+            <Group Label="Fecha">
+              <Control Label="Fecha inicio prueba/desarrollo" Type="DateTimeControl" FieldName="Claro.ALM.FechaInicioPruebaDesarrollo" />
+              <Control Label="Fecha fin prueba/desarrollo" Type="DateTimeControl" FieldName="Claro.ALM.FechaFinPruebaDesarrollo" />
+              <Control Label="Fecha compromiso entrega a Testing" Type="DateTimeControl" FieldName="Claro.ALM.FechaCompromisoEntregaTesting" />
+            </Group>
+            <Group Label="Otros">
+              <Control Label="Proveedor Ejecutor" Type="FieldControl" FieldName="Claro.ALM.ProveedorEjecutor" />
+              <Control Label="Clase de presupuesto" Type="FieldControl" FieldName="Claro.ALM.ClasePresupuesto" />
+              <Control Label="Cantidad de analistas" Type="FieldControl" FieldName="Claro.ALM.CantidadAnalistas" />
+            </Group>
+            <Group Label="Esfuerzo">
+              <Control Label="Trabajo efectivo" Type="FieldControl" FieldName="Claro.ALM.TrabajoEfectivo" />
+              <Control Label="Cantidad de reclamos" Type="FieldControl" FieldName="Claro.ALM.CantidadReclamos" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Fechas planeadas de entrega">
+              <Control Label="Fecha paquete 1" Type="DateTimeControl" FieldName="Claro.ALM.FechaPaquete1" />
+              <Control Label="Fecha paquete 2" Type="DateTimeControl" FieldName="Claro.ALM.FechaPaquete2" />
+              <Control Label="Fecha paquete 3" Type="DateTimeControl" FieldName="Claro.ALM.FechaPaquete3" />
+              <Control Label="Fecha paquete 4" Type="DateTimeControl" FieldName="Claro.ALM.FechaPaquete4" />
+            </Group>
+            <Group Label="Fechas de entrega">
+              <Control Label="Entrega paquete 1" Type="FieldControl" FieldName="Claro.ALM.EntregaPaquete1" />
+              <Control Label="Fecha entrega paquete 1" Type="DateTimeControl" FieldName="Claro.ALM.FechaEntregaPaquete1" />
+              <Control Label="Entrega paquete 2" Type="FieldControl" FieldName="Claro.ALM.EntregaPaquete2" />
+              <Control Label="Fecha entrega paquete 2" Type="DateTimeControl" FieldName="Claro.ALM.FechaEntregaPaquete2" />
+              <Control Label="Entrega paquete 3" Type="FieldControl" FieldName="Claro.ALM.EntregaPaquete3" />
+              <Control Label="Fecha entrega paquete 3" Type="DateTimeControl" FieldName="Claro.ALM.FechaEntregaPaquete3" />
+              <Control Label="Entrega paquete 4" Type="FieldControl" FieldName="Claro.ALM.EntregaPaquete4" />
+              <Control Label="Fecha entrega paquete 4" Type="DateTimeControl" FieldName="Claro.ALM.FechaEntregaPaquete4" />
+            </Group>
+            <Group Label="Detalle Optimista">
+              <Control Label="Horas optimistas" Type="FieldControl" FieldName="Claro.ALM.HorasOptimistas" />
+              <Control Label="Dias optimistas" Type="FieldControl" FieldName="Claro.ALM.DiasOptimistas" />
+              <Control Label="Fecha final planeada optimista" Type="DateTimeControl" FieldName="Claro.ALM.FechaFinOptimista" />
+            </Group>
+            <Group Label="Detalle Pesimista">
+              <Control Label="% de incertidumbre" Type="FieldControl" FieldName="Claro.ALM.PorcentajeIncertidumbre" />
+              <Control Label="Dias pesimistas" Type="FieldControl" FieldName="Claro.ALM.DiasPesimistas" />
+              <Control Label="Horas pesimistas planeación" Type="FieldControl" FieldName="Claro.ALM.HorasPesimistasPlaneacion" />
+              <Control Label="Horas pesimistas diseño" Type="FieldControl" FieldName="Claro.ALM.HorasPesimistasDiseno" />
+              <Control Label="Horas pesimistas ejecución" Type="FieldControl" FieldName="Claro.ALM.HorasPesimistasEjecucion" />
+              <Control Label="Horas pesimistas cierre" Type="FieldControl" FieldName="Claro.ALM.HorasPesimistasCierre" />
+            </Group>
+            <Group Label="Aseguramiento de proceso">
+              <Control Label="Rating entrega 1" Type="FieldControl" FieldName="Claro.ALM.RatingEntrega1" />
+              <Control Label="Rating entrega 2" Type="FieldControl" FieldName="Claro.ALM.RatingEntrega2" />
+              <Control Label="Rating entrega 3" Type="FieldControl" FieldName="Claro.ALM.RatingEntrega3" />
+              <Control Label="Rating entrega 4" Type="FieldControl" FieldName="Claro.ALM.RatingEntrega4" />
+              <Control Label="Rating entrega final" Type="FieldControl" FieldName="Claro.ALM.RatingEntregaFinal" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Aseguramiento de proceso" LayoutMode="EqualColumns">
+          <Section>
+            <Group Label="Facturable">
+              <Control Label="Entrega 1 Facturable" Type="FieldControl" FieldName="Claro.ALM.FacturableEntrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin1" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin2" ReadOnly="True" />
+              <Control Label="Entrega 2 Facturable" Type="FieldControl" FieldName="Claro.ALM.FacturableEntrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin3" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin4" ReadOnly="True" />
+              <Control Label="Entrega 3 Facturable" Type="FieldControl" FieldName="Claro.ALM.FacturableEntrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin5" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin6" ReadOnly="True" />
+              <Control Label="Entrega 4 Facturable" Type="FieldControl" FieldName="Claro.ALM.FacturableEntrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin7" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin8" ReadOnly="True" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Pagada">
+              <Control Label="Entrega 1 Pagada" Type="FieldControl" FieldName="Claro.ALM.PagadaEntrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin1" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin2" ReadOnly="True" />
+              <Control Label="Entrega 2 Pagada" Type="FieldControl" FieldName="Claro.ALM.PagadaEntrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin3" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin4" ReadOnly="True" />
+              <Control Label="Entrega 3 Pagada" Type="FieldControl" FieldName="Claro.ALM.PagadaEntrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin5" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin6" ReadOnly="True" />
+              <Control Label="Entrega 4 Pagada" Type="FieldControl" FieldName="Claro.ALM.PagadaEntrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin7" ReadOnly="True" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.Comodin8" ReadOnly="True" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Horas pagadas">
+              <Control Label="Horas pagadas entrega 1" Type="FieldControl" FieldName="Claro.ALM.HorasPagadas1Entrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas2Entrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas3Entrega1" />
+              <Control Label="Horas pagadas entrega 2" Type="FieldControl" FieldName="Claro.ALM.HorasPagadas1Entrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas2Entrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas3Entrega2" />
+              <Control Label="Horas pagadas entrega 3" Type="FieldControl" FieldName="Claro.ALM.HorasPagadas1Entrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas2Entrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas3Entrega3" />
+              <Control Label="Horas pagadas entrega 4" Type="FieldControl" FieldName="Claro.ALM.HorasPagadas1Entrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas2Entrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.HorasPagadas3Entrega4" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Orden de Compra SAP">
+              <Control Label="Orden de Compra entrega 1" Type="FieldControl" FieldName="Claro.ALM.OrdenCompra1Entrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra2Entrega1" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra3Entrega1" />
+              <Control Label="Orden de Compra entrega 2" Type="FieldControl" FieldName="Claro.ALM.OrdenCompra1Entrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra2Entrega2" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra3Entrega2" />
+              <Control Label="Orden de Compra entrega 3" Type="FieldControl" FieldName="Claro.ALM.OrdenCompra1Entrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra2Entrega3" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra3Entrega3" />
+              <Control Label="Orden de Compra entrega 4" Type="FieldControl" FieldName="Claro.ALM.OrdenCompra1Entrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra2Entrega4" />
+              <Control Type="FieldControl" FieldName="Claro.ALM.OrdenCompra3Entrega4" />
+            </Group>
+          </Section>
+        </Page>
+      </WebLayout>
+    </FORM>
+  </WORKITEMTYPE>
+</witd:WITD>

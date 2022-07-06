@@ -1,0 +1,3 @@
+<LinkTypes>
+  <LinkType ReferenceName="Microsoft.VSTS.Common.TestedBy" ForwardName="Tested By" ReverseName="Tests" Topology="Dependency" />
+</LinkTypes>

@@ -1,0 +1,1900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Task" refname="Custom.Task">
+    <DESCRIPTION>Tracks work that needs to be done.</DESCRIPTION>
+    <GLOBALLISTS>
+      <GLOBALLIST name="BugActivity">
+        <LISTITEM value="Deployment" />
+        <LISTITEM value="Design" />
+        <LISTITEM value="Development" />
+        <LISTITEM value="Documentation" />
+        <LISTITEM value="Requirements" />
+        <LISTITEM value="Testing" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugPriority">
+        <LISTITEM value="1" />
+        <LISTITEM value="2" />
+        <LISTITEM value="3" />
+        <LISTITEM value="4" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugSeverity">
+        <LISTITEM value="1 - Critical" />
+        <LISTITEM value="2 - High" />
+        <LISTITEM value="3 - Medium" />
+        <LISTITEM value="4 - Low" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugBlocked">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugFoundInEnvironment">
+        <LISTITEM value="Desarrollo" />
+        <LISTITEM value="Produccion" />
+        <LISTITEM value="Pruebas" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugRootCause">
+        <LISTITEM value="Error codigo" />
+        <LISTITEM value="Error definicion" />
+        <LISTITEM value="No esta correctamente construido" />
+        <LISTITEM value="No esta lista la configuracion necesaria" />
+        <LISTITEM value="No se instalo correctamente" />
+        <LISTITEM value="No se realizo la entrega completa del objeto de la prueba" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugAtribuibleA">
+        <LISTITEM value="Desarrollo" />
+        <LISTITEM value="Pruebas" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugNaturaleza">
+        <LISTITEM value="Documentacion" />
+        <LISTITEM value="Funcional" />
+        <LISTITEM value="Programacion" />
+      </GLOBALLIST>
+      <GLOBALLIST name="ProveedorDesarrollo">
+        <LISTITEM value="Accenture" />
+        <LISTITEM value="Amdocs" />
+        <LISTITEM value="Antica" />
+        <LISTITEM value="AS/NET" />
+        <LISTITEM value="AVAYA" />
+        <LISTITEM value="Bession" />
+        <LISTITEM value="CITI México" />
+        <LISTITEM value="Claro" />
+        <LISTITEM value="Computec" />
+        <LISTITEM value="Delaware" />
+        <LISTITEM value="DELOITTE MX" />
+        <LISTITEM value="El Corte Inglés" />
+        <LISTITEM value="Ericsson" />
+        <LISTITEM value="Everis" />
+        <LISTITEM value="FlyTXT" />
+        <LISTITEM value="FONYOU" />
+        <LISTITEM value="Gemalto" />
+        <LISTITEM value="Genesis" />
+        <LISTITEM value="Globant" />
+        <LISTITEM value="Hitss" />
+        <LISTITEM value="HP" />
+        <LISTITEM value="Huawei" />
+        <LISTITEM value="IBM" />
+        <LISTITEM value="Implementan System" />
+        <LISTITEM value="INFODEC" />
+        <LISTITEM value="INTEC" />
+        <LISTITEM value="Intergrupo" />
+        <LISTITEM value="Interno" />
+        <LISTITEM value="IP Total" />
+        <LISTITEM value="Iprogrammers" />
+        <LISTITEM value="Lagash" />
+        <LISTITEM value="Mahindra" />
+        <LISTITEM value="Microsoft" />
+        <LISTITEM value="Oracle" />
+        <LISTITEM value="Premium Consulting" />
+        <LISTITEM value="Procalidad" />
+        <LISTITEM value="RR-Enterprise" />
+        <LISTITEM value="RSA" />
+        <LISTITEM value="Scrum" />
+        <LISTITEM value="Servinformacion" />
+        <LISTITEM value="SINTEC" />
+        <LISTITEM value="SITIC" />
+        <LISTITEM value="Softtek" />
+        <LISTITEM value="Sonda" />
+        <LISTITEM value="SQL" />
+        <LISTITEM value="Stefanini" />
+        <LISTITEM value="Tactical" />
+        <LISTITEM value="Tandem" />
+        <LISTITEM value="Tata" />
+        <LISTITEM value="TATIC" />
+        <LISTITEM value="Telmex" />
+        <LISTITEM value="Transfiriendo" />
+        <LISTITEM value="Unisys" />
+        <LISTITEM value="VSOFT" />
+        <LISTITEM value="WIGILABS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugSolutionPriority">
+        <LISTITEM value="Alta" />
+        <LISTITEM value="Baja" />
+        <LISTITEM value="Media" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugSolutionComplexity">
+        <LISTITEM value="Alta" />
+        <LISTITEM value="Baja" />
+        <LISTITEM value="Media" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BugTypeError">
+        <LISTITEM value="Ambiguedad" />
+        <LISTITEM value="Completitud" />
+        <LISTITEM value="Concision" />
+        <LISTITEM value="Consideracion" />
+        <LISTITEM value="Contraposicion" />
+        <LISTITEM value="Error" />
+        <LISTITEM value="Sugerencia" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestCasePlanned">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestCaseEsTestStandard">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestCaseTypeCase">
+        <LISTITEM value="Smoke test" />
+        <LISTITEM value="Test" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanTipoPrueba">
+        <LISTITEM value="Funcional" />
+        <LISTITEM value="Requerimientos" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanNivelPruebas">
+        <LISTITEM value="Componente" />
+        <LISTITEM value="EXUS – IT" />
+        <LISTITEM value="Integracion" />
+        <LISTITEM value="Sistema" />
+        <LISTITEM value="UAT" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanTipoServicioPruebas">
+        <LISTITEM value="Brief" />
+        <LISTITEM value="CDRS" />
+        <LISTITEM value="Configuracion" />
+        <LISTITEM value="EXUS – IT" />
+        <LISTITEM value="Gestion" />
+        <LISTITEM value="RAC" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanGarantia">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanAmbientePruebas">
+        <LISTITEM value="Desarrollo" />
+        <LISTITEM value="Pre-produccion" />
+        <LISTITEM value="Produccion" />
+        <LISTITEM value="QA" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TestPlanCausaCancelacion">
+        <LISTITEM value="Es mas eficiente crear una nueva" />
+        <LISTITEM value="Mas de tres meses de congelamiento" />
+        <LISTITEM value="Otras causales" />
+        <LISTITEM value="Por decision del negocio" />
+        <LISTITEM value="Por solicitud Desarrollo" />
+      </GLOBALLIST>
+      <GLOBALLIST name="GdPGerencia">
+        <LISTITEM value="CANALES &amp; POSVENTA" />
+        <LISTITEM value="COC FACTURACIÓN PERSONAS" />
+        <LISTITEM value="DESEMPEÑO CALIDAD Y TESTING" />
+        <LISTITEM value="DIGITAL" />
+        <LISTITEM value="FABRICA DIGITAL PROYECTOS" />
+        <LISTITEM value="FACTURACIÓN HOGARES Y E&amp;N" />
+        <LISTITEM value="GESTION ADMINISTRATIVA" />
+        <LISTITEM value="GESTION EMPRESARIAL SAP" />
+        <LISTITEM value="GESTION INFO Y BI" />
+        <LISTITEM value="IMPLEMENTACIÓN CANAL VENTA AUTO GESTIÓN" />
+		<LISTITEM value="IMPLEMENTACIÓN INSPIRA" />
+        <LISTITEM value="INGENIERIA P&amp;S" />
+        <LISTITEM value="MIDDLEWARE IT" />
+        <LISTITEM value="VENTA DIGITAL" />
+      </GLOBALLIST>
+      <GLOBALLIST name="GdPProveedorDesarrollo">
+        <LISTITEM value="FONYOU" />
+        <LISTITEM value="INTEC" />
+        <LISTITEM value="Accenture" />
+        <LISTITEM value="Amdocs" />
+        <LISTITEM value="Antica" />
+        <LISTITEM value="AVAYA" />
+        <LISTITEM value="Bession" />
+        <LISTITEM value="CITI México" />
+        <LISTITEM value="Claro" />
+        <LISTITEM value="Computec" />
+        <LISTITEM value="Delaware" />
+        <LISTITEM value="DELOITTE MX" />
+        <LISTITEM value="El Corte Inglés" />
+        <LISTITEM value="Ericsson" />
+        <LISTITEM value="Everis" />
+        <LISTITEM value="FlyTXT" />
+        <LISTITEM value="Gemalto" />
+        <LISTITEM value="Globant" />
+        <LISTITEM value="Hitss" />
+        <LISTITEM value="HP" />
+        <LISTITEM value="IBM" />
+        <LISTITEM value="Intergrupo" />
+        <LISTITEM value="Interno" />
+        <LISTITEM value="IP Total" />
+        <LISTITEM value="Microsoft" />
+        <LISTITEM value="Oracle" />
+        <LISTITEM value="Procalidad" />
+        <LISTITEM value="RR-Enterprise" />
+        <LISTITEM value="RSA" />
+        <LISTITEM value="Scrum" />
+        <LISTITEM value="Servinformacion" />
+        <LISTITEM value="Softtek" />
+        <LISTITEM value="Sonda" />
+        <LISTITEM value="Stefanini" />
+        <LISTITEM value="Tactical" />
+        <LISTITEM value="Tandem" />
+        <LISTITEM value="Tata" />
+        <LISTITEM value="TATIC" />
+        <LISTITEM value="Telmex" />
+        <LISTITEM value="Transfiriendo" />
+        <LISTITEM value="Unisys" />
+        <LISTITEM value="WIGILABS" />
+        <LISTITEM value="Huawei" />
+        <LISTITEM value="Mahindra" />
+        <LISTITEM value="Genesis" />
+        <LISTITEM value="AS/NET" />
+        <LISTITEM value="Implementan System" />
+        <LISTITEM value="SQL" />
+        <LISTITEM value="Lagash" />
+        <LISTITEM value="SINTEC" />
+        <LISTITEM value="VSOFT" />
+        <LISTITEM value="INFODEC" />
+        <LISTITEM value="Indra" />
+        <LISTITEM value="SITIC" />
+        <LISTITEM value="Iprogrammers" />
+        <LISTITEM value="Premium Consulting" />
+        <LISTITEM value="SOAINT" />
+        <LISTITEM value="NOVATEC" />
+        <LISTITEM value="PRAGMA" />
+        <LISTITEM value="VASS" />
+        <LISTITEM value="INETUM" />
+      </GLOBALLIST>
+      <GLOBALLIST name="GdPProveedorPruebas">
+        <LISTITEM value="Claro" />
+        <LISTITEM value="Everis" />
+        <LISTITEM value="Hitss" />
+        <LISTITEM value="Choucair" />
+        <LISTITEM value="Sistema No QA" />
+        <LISTITEM value="SQA" />
+        <LISTITEM value="Usuario" />
+        <LISTITEM value="Indra" />
+        <LISTITEM value="Neoris" />
+        <LISTITEM value="Accenture" />
+        <LISTITEM value="Praxis" />
+      </GLOBALLIST>
+      <GLOBALLIST name="GdPProveedorRequerimientos">
+        <LISTITEM value="Indudata" />
+        <LISTITEM value="Tata" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefSubEstadoNew">
+        <LISTITEM value="Co-creacion funcional" />
+        <LISTITEM value="Co-creacion tecnica" />
+        <LISTITEM value="Creado" />
+        <LISTITEM value="Estimado" />
+        <LISTITEM value="Factible" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefSubEstadoInProgress">
+        <LISTITEM value="Aprobado Junta" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefSubEstadoDone">
+        <LISTITEM value="Finalizado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefSubEstadoRemoved">
+        <LISTITEM value="Cancelado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefAreaNegocio">
+        <LISTITEM value="Dir. Aseguramiento de Ingresos" />
+        <LISTITEM value="Dir. Corp. Asuntos Regulatorios y Rel. Institucionales" />
+        <LISTITEM value="Dir. Corp. Jurídico y Asuntos Societarios" />
+        <LISTITEM value="Dir. Corporativa de Comunicaciones" />
+        <LISTITEM value="Dir. Corporativa de Gestión Humana" />
+        <LISTITEM value="Dir. Corporativa de Mercadeo y Comunicaciones" />
+        <LISTITEM value="Dir. Corporativa Planeación Estratégica y Compras" />
+        <LISTITEM value="Dir. Corporativo de Informática" />
+        <LISTITEM value="Dir. Corporativo Finanzas" />
+        <LISTITEM value="Dir. Corporativo Ingeniería y Operación" />
+        <LISTITEM value="Dir. Corporativo Producto Personas Pospago" />
+        <LISTITEM value="Dir. Corporativo Producto Personas Prepago" />
+        <LISTITEM value="Dir. Corporativo Servicios Valor Agregado e Innovación" />
+        <LISTITEM value="Dir. de Auditoría" />
+        <LISTITEM value="Dir. Ejecutiva Unidad Negocio Empresas" />
+        <LISTITEM value="Dir. Ejecutiva Unidad Negocio Hogares" />
+        <LISTITEM value="Dir. Ejecutiva Unidad Negocio Personas" />
+        <LISTITEM value="Dir. Experiencia al Cliente" />
+        <LISTITEM value="Dir. Soporte a la Operación" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefCategoriaRiesgo">
+        <LISTITEM value="Alta" />
+        <LISTITEM value="Baja" />
+        <LISTITEM value="Moderada" />
+        <LISTITEM value="Muy Alta" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefClasificacion">
+        <LISTITEM value="Incidente" />
+        <LISTITEM value="Proyecto" />
+        <LISTITEM value="Requerimiento" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefComplejidad">
+        <LISTITEM value="1" />
+        <LISTITEM value="2" />
+        <LISTITEM value="3" />
+        <LISTITEM value="4" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefEstrategia">
+        <LISTITEM value="ACTIVACIÓN Y OPERACIONES (CARTERA/LOGISTICA/INVENTARIO)" />
+        <LISTITEM value="ASEGURAMIENTO Y CONTROL" />
+        <LISTITEM value="C.CLARO RUN" />
+        <LISTITEM value="C.CONTROL Y REGULACION" />
+        <LISTITEM value="C.DIGITAL" />
+        <LISTITEM value="C.INGRESOS" />
+        <LISTITEM value="C.M+3" />
+        <LISTITEM value="C.PROBLEMAS" />
+        <LISTITEM value="C.PROYECTOS" />
+        <LISTITEM value="CALIDAD DEL SERVICIO FIJO (DISPONIBILIDAD/MONITOREO/MANTENIEMINTO/INICIDENTES)" />
+        <LISTITEM value="CALIDAD DEL SERVICIO MÓVIL (DISPONIBILIDAD/MONITOREO/MANTENIMIENTO/INCIDENTES)" />
+        <LISTITEM value="COMERCIAL FIJA (VENTAS/APROVISIONAMIENTO)" />
+        <LISTITEM value="COMERCIAL MÓVIL (VENTAS/DISTRIBUCIÓN)" />
+        <LISTITEM value="COMUNICACIONES" />
+        <LISTITEM value="CORPORATIVOS" />
+        <LISTITEM value="EMPRESARIAL FIJO" />
+        <LISTITEM value="ESTRATEGIA POSPAGO" />
+        <LISTITEM value="ESTRATEGIA PREPAGO" />
+        <LISTITEM value="FINANCIERA" />
+        <LISTITEM value="INGENIERIA FIJA" />
+        <LISTITEM value="INICIATIVAS DE EFICIENCIA OPERATIVA" />
+        <LISTITEM value="PRODUCTO FIJO" />
+        <LISTITEM value="PRODUCTO MÓVIL/DATOS" />
+        <LISTITEM value="RESIDENCIAL" />
+        <LISTITEM value="SAC/OPERACIONES" />
+        <LISTITEM value="SERVICIO AL CLIENTE FIJA (VENTA/POSVENTA: RETENCIÓN Y FIDELIZACIÓN/ATENCIÓN PQR)" />
+        <LISTITEM value="SERVICIO AL CLIENTE MÓVIL (VENTA/POSVENTA: RETENCIÓN Y FIDELIZACIÓN/ATENCIÓN PQR)" />
+        <LISTITEM value="USO INTERNO" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefParticipaArquitectura">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefSegmento">
+        <LISTITEM value="DDP ASI -JURIDICA" />
+        <LISTITEM value="DDP DSO/UNH" />
+        <LISTITEM value="DDP EXP/DIG" />
+        <LISTITEM value="DDP FINANCIERA /GH/ Logistica" />
+        <LISTITEM value="DDP IFI/UEN/MYC/DIT" />
+        <LISTITEM value="DDP PRODUCTO POSPAGO" />
+        <LISTITEM value="DDP SVA" />
+        <LISTITEM value="DPP PRODUCTO PREPAGO / UNP" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefTipoBeneficio">
+        <LISTITEM value="Aseguramiento de ingresos" />
+        <LISTITEM value="Eficiencias operativas" />
+        <LISTITEM value="Generador de ahorros" />
+        <LISTITEM value="Incremento en ventas por evolutivos" />
+        <LISTITEM value="Mantenimiento de clientes" />
+        <LISTITEM value="Riesgo regulatorio" />
+        <LISTITEM value="Venta de nuevos productos" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefBusinessValue">
+        <LISTITEM value="1" />
+        <LISTITEM value="13" />
+        <LISTITEM value="2" />
+        <LISTITEM value="21" />
+        <LISTITEM value="3" />
+        <LISTITEM value="5" />
+        <LISTITEM value="8" />
+      </GLOBALLIST>
+      <GLOBALLIST name="BriefBlocked">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPSubEstadoNew">
+        <LISTITEM value="Creado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPSubEstadoApproved">
+        <LISTITEM value="Aprobado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPSubEstadoCommitted">
+        <LISTITEM value="Analisis" />
+        <LISTITEM value="Construccion" />
+        <LISTITEM value="Despliegue" />
+        <LISTITEM value="Pruebas" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPSubEstadoDone">
+        <LISTITEM value="Produccion" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPSubEstadoRemoved">
+        <LISTITEM value="Cancelado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPCausalCambioFecha">
+        <LISTITEM value="Dependencias de otras áreas externas a IT" />
+        <LISTITEM value="Dependencias IT" />
+        <LISTITEM value="Desplazamiento acordado con negocio" />
+        <LISTITEM value="Falta de aprobaciones de negocio" />
+        <LISTITEM value="Fechas bloqueadas para salidas o decisiones de compañía" />
+        <LISTITEM value="No entrega del proveedor a tiempo" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPCumplimientoFabricaDesarrollo">
+        <LISTITEM value="N/A" />
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPBlocked">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto GESTION ADMINISTRATIVA">
+        <LISTITEM value="APLICACIONES ADMINISTRATIVAS MOVIL" />
+        <LISTITEM value="ASISTENTE VIRTUAL" />
+        <LISTITEM value="CALLIDUS BACKLOG" />
+        <LISTITEM value="CALLIDUS OTROS" />
+        <LISTITEM value="CALLIDUS POSPAGO" />
+        <LISTITEM value="CALLIDUS PREPAGO" />
+        <LISTITEM value="CLARITY" />
+        <LISTITEM value="CONECTADOS" />
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="EXTRACTORES" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="INTRANET MOVIL" />
+        <LISTITEM value="INTRANET SHAREPOINT FIJA" />
+        <LISTITEM value="NOMINA" />
+        <LISTITEM value="OTROS FIJA" />
+        <LISTITEM value="PORTAL COMERCIAL -FIJA" />
+        <LISTITEM value="PORTAL COMERCIAL -MOVIL" />
+        <LISTITEM value="PORTAL REPORTE Y LIBERACION" />
+        <LISTITEM value="PORTALES DE DISTRIBUIDORES" />
+        <LISTITEM value="PORTALES SAP" />
+        <LISTITEM value="POWER BI" />
+        <LISTITEM value="PROJECT ONLINE" />
+        <LISTITEM value="SHAREP O365" />
+        <LISTITEM value="SISCO" />
+        <LISTITEM value="SISTEMAS DE RECAUDO" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="WEB SERVICES" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto CANALES &amp; POSVENTA">
+        <LISTITEM value="AC ACTIVACION SERVICIOS Y PAQUETES" />
+        <LISTITEM value="AC CONSULTAS" />
+        <LISTITEM value="AC OTROS" />
+        <LISTITEM value="AC REGISTRO IMEI" />
+        <LISTITEM value="CANAL SMS" />
+        <LISTITEM value="CANAL USSD" />
+        <LISTITEM value="EAF SERVICIOS WEB CANALES" />
+        <LISTITEM value="ENDECA" />
+        <LISTITEM value="FONYOU" />
+        <LISTITEM value="GESTIÓN PQR" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="IVR FIJA" />
+        <LISTITEM value="IVR MOVIL" />
+        <LISTITEM value="MENSAJERIA" />
+        <LISTITEM value="ONIX" />
+        <LISTITEM value="ONIX ESPRESS" />
+        <LISTITEM value="OTROS - CRM MOVIL" />
+        <LISTITEM value="OTROS CRM FIJA" />
+        <LISTITEM value="OVERVIEW" />
+        <LISTITEM value="PORTAL PAC" />
+        <LISTITEM value="SAC" />
+        <LISTITEM value="SCREEN VIEW - CPS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="STREET SELLER" />
+        <LISTITEM value="TURNOS" />
+        <LISTITEM value="USSD_HUAWEI" />
+        <LISTITEM value="SPACE1" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto COC FACTURACIÓN PERSONAS">
+        <LISTITEM value="ACTIVACION" />
+        <LISTITEM value="CAMBIOS DE SERVICIO-PROCESOS BATCH" />
+        <LISTITEM value="COMPENSACIONES-PROMOCIONES-METRICAS" />
+        <LISTITEM value="DATAREP" />
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="DOC1" />
+        <LISTITEM value="EAF SERVICIOS FRONT" />
+        <LISTITEM value="GIT INSPIRA" />
+        <LISTITEM value="HOTRATING" />
+        <LISTITEM value="IMPUESTOS-CONTABILIDAD-CARTERA" />
+        <LISTITEM value="INCIDENTES PROBLEMAS FACTURACIÓN POS" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="INTERNO PREPAGO" />
+        <LISTITEM value="ITEL" />
+        <LISTITEM value="LISTAS  INSPIRA" />
+        <LISTITEM value="OCS" />
+        <LISTITEM value="PORTAL  USUARIOS  INSPIRA" />
+        <LISTITEM value="PROCESOS DE FACTURACIÓN" />
+        <LISTITEM value="RECARGAS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="TARIFICACION" />
+        <LISTITEM value="VISOR DE ASIGNACIONES" />
+        <LISTITEM value="VISOR MODULOS" />
+        <LISTITEM value="VISOR MULTIPLAY" />
+        <LISTITEM value="VISOR VENTA DIGITAL" />
+        <LISTITEM value="BILLRO" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto DIGITAL">
+        <LISTITEM value="CANAL APP EMPRESAS" />
+        <LISTITEM value="CANAL APP PERSONAS" />
+        <LISTITEM value="CANAL APPS" />
+        <LISTITEM value="CLARO.COM" />
+        <LISTITEM value="CLOUD" />
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="DIME" />
+        <LISTITEM value="FRONT CARTA COMISIONES" />
+        <LISTITEM value="GATEWAY DE PAGOS" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="INHABILITACION GESTOR DE REGLAS" />
+        <LISTITEM value="INHABILITACION PHONE PROTECT" />
+        <LISTITEM value="IVR VISUAL WEB" />
+        <LISTITEM value="MI ENLACE" />
+        <LISTITEM value="MOTOR DE PAGOS" />
+        <LISTITEM value="OTRAS APPS (NO MI CLARO)" />
+        <LISTITEM value="PORTAL E-COMMCERCE B2C" />
+        <LISTITEM value="PORTAL UNIFICADO EMPRESAS Y NEGOCIOS" />
+        <LISTITEM value="PORTALES CAUTIVOS" />
+        <LISTITEM value="PORTALES FIJA" />
+        <LISTITEM value="PORTALES MI CLARO EMPRESAS" />
+        <LISTITEM value="PORTALES MI CLARO WEB" />
+        <LISTITEM value="REDMAS" />
+        <LISTITEM value="REPOSITORIO" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="ANALYTICS EVENTS WEBS Y APPS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto FACTURACIÓN HOGARES Y E&amp;N">
+        <LISTITEM value="ACE – MIS – SRT" />
+        <LISTITEM value="BIM" />
+        <LISTITEM value="DCO" />
+        <LISTITEM value="GEVENUE" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="NGN" />
+        <LISTITEM value="RR" />
+        <LISTITEM value="RR INTERNO FIJA" />
+        <LISTITEM value="SGA" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="ODI" />
+        <LISTITEM value="MOTOR DE PAGOS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto GESTION EMPRESARIAL SAP">
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="NOMINA_SAP_CLOUD" />
+        <LISTITEM value="PORTALES SAP TEMPLATE" />
+        <LISTITEM value="SAP FINANZAS" />
+        <LISTITEM value="SAP LOGISTICO" />
+        <LISTITEM value="SAP OTROS" />
+        <LISTITEM value="SAP SCM" />
+        <LISTITEM value="SAP VENTAS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="SUCESS FACTOR" />
+        <LISTITEM value="APLICACIONES DE INTEGRACION SAP" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto INGENIERÍA P&amp;S">
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto MIDDLEWARE IT">
+        <LISTITEM value="ACTIVADOR CORPORATIVO" />
+        <LISTITEM value="APROVISIONADOR FIJA" />
+        <LISTITEM value="APROVISIONADOR MO" />
+        <LISTITEM value="APROVISIONAMIENTO CAP" />
+        <LISTITEM value="ASCARD MODULOS" />
+        <LISTITEM value="ASCARD WS" />
+        <LISTITEM value="BUS EMPRESARIAL" />
+        <LISTITEM value="BUS INTEGRACION ASCARD" />
+        <LISTITEM value="BUS INTEGRADOR OFSC" />
+        <LISTITEM value="CANAL SAT" />
+        <LISTITEM value="CANAL SAT MULTIMEDIA" />
+        <LISTITEM value="CGV" />
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="EAF BD - SERNET" />
+        <LISTITEM value="EAF SERVICIOS WEB" />
+        <LISTITEM value="GDO" />
+        <LISTITEM value="GESTION AGENDAMIENTO" />
+        <LISTITEM value="GESTOR CAMPAÑAS ROAMING" />
+        <LISTITEM value="GESTOR DE COMUNIDADES" />
+        <LISTITEM value="GRF" />
+        <LISTITEM value="GUI_CONFIGURACION" />
+        <LISTITEM value="GW CONTENIDO" />
+        <LISTITEM value="HOT KIT" />
+        <LISTITEM value="IMEICOMCEL" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="INHABILITACION INTEGRADOR" />
+        <LISTITEM value="LIQUIDACION MOyMA (OPS)" />
+        <LISTITEM value="MAGUARE" />
+        <LISTITEM value="MEDIACION E INTERCONEXION" />
+        <LISTITEM value="MER" />
+        <LISTITEM value="MG ENTREGA PC" />
+        <LISTITEM value="MG GERENCIA" />
+        <LISTITEM value="MG OTROS" />
+        <LISTITEM value="MG PQRS" />
+        <LISTITEM value="MGL INSPIRA" />
+        <LISTITEM value="MICROSERVICIOS" />
+        <LISTITEM value="MIDDLEWARE EAP" />
+        <LISTITEM value="MODULO DE GESTION" />
+        <LISTITEM value="MOTOR DE REGLAS" />
+        <LISTITEM value="NOTIFICADOR" />
+        <LISTITEM value="OBR" />
+        <LISTITEM value="OFSC" />
+        <LISTITEM value="OTA-GEMALTO" />
+        <LISTITEM value="PARAMETRIZACION APROVISIONAMIENTO" />
+        <LISTITEM value="PORTANODE" />
+        <LISTITEM value="PROCESAMIENTO DATAMA" />
+        <LISTITEM value="PROCESS AND RULES MANAGEMENT MIDDLEWARE" />
+        <LISTITEM value="RA" />
+        <LISTITEM value="SERVICIOS VAS" />
+        <LISTITEM value="SERVICIOS WS" />
+        <LISTITEM value="SICCON" />
+        <LISTITEM value="SISTEMAS DE FRAUDE" />
+        <LISTITEM value="SLCP" />
+        <LISTITEM value="SMALLWORLD" />
+        <LISTITEM value="SMSMMS" />
+        <LISTITEM value="SOA DEVOPS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="STNR  - INTERCONEXION" />
+        <LISTITEM value="SVMA -MULTIACCESO" />
+        <LISTITEM value="SYSMETRIC" />
+        <LISTITEM value="XDR" />
+        <LISTITEM value="STLD" />
+        <LISTITEM value="GRF EAF" />
+        <LISTITEM value="GRF EAP" />
+        <LISTITEM value="MER EAF" />
+        <LISTITEM value="MER EAP" />
+        <LISTITEM value="CMS" />
+        <LISTITEM value="COMPONENTE NOTIFICACIONES" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto VENTA DIGITAL">
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="INCIDENTES-PROBLEMAS" />
+        <LISTITEM value="POLIEDRO ACTIVACION POSPAGO" />
+        <LISTITEM value="POLIEDRO ACTIVACIÓN PREPAGO" />
+        <LISTITEM value="POLIEDRO EVIDENTE" />
+        <LISTITEM value="POLIEDRO INSTALACIÓN DE PAQUETES" />
+        <LISTITEM value="POLIEDRO MODULO CONSULTA DE CRÉDITO" />
+        <LISTITEM value="POLIEDRO MÓDULO MAAC" />
+        <LISTITEM value="POLIEDRO MULTIPLAY" />
+        <LISTITEM value="POLIEDRO OTROS" />
+        <LISTITEM value="POLIEDRO PLUS" />
+        <LISTITEM value="POLIEDRO PORTABILIDAD" />
+        <LISTITEM value="POLIEDRO REPOSICIÓN" />
+        <LISTITEM value="POLIEDRO REPOSICION EN VENTA DIGITAL" />
+        <LISTITEM value="POLIEDRO VENTA DE TECNOLOGIA" />
+        <LISTITEM value="POLIEDRO WS" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto IMPLEMENTACIÓN CANAL VENTA AUTO GESTIÓN">
+        <LISTITEM value="PORTAL E-COMMERCE B2C" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+      </GLOBALLIST>
+	  <GLOBALLIST name="RLPLinea de producto IMPLEMENTACIÓN INSPIRA">
+        <LISTITEM value="MI CLARO ASESOR" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto FABRICA DIGITAL PROYECTOS">
+        <LISTITEM value="AC ACTIVACION SERVICIOS Y PAQUETES" />
+        <LISTITEM value="AC CONSULTAS" />
+        <LISTITEM value="AC OTROS" />
+        <LISTITEM value="AC REGISTRO IMEI" />
+        <LISTITEM value="APIs" />
+        <LISTITEM value="ARQUITECTO MS" />
+        <LISTITEM value="ASCARD MODULOS" />
+        <LISTITEM value="ASCARD WS" />
+        <LISTITEM value="AUTOMATIZACIONES RPA" />
+        <LISTITEM value="BASES DE DATOS" />
+        <LISTITEM value="BSCS" />
+        <LISTITEM value="BUS EMPRESARIAL" />
+        <LISTITEM value="BUS  INTEGRACION ASCARD" />
+        <LISTITEM value="CALLIDUS BACKLOG" />
+        <LISTITEM value="CALLIDUS OTROS" />
+        <LISTITEM value="CALLIDUS POSPAGO" />
+        <LISTITEM value="CALLIDUS PREPAGO" />
+        <LISTITEM value="CANAL APP EMPRESAS" />
+        <LISTITEM value="CANAL APP PERSONAS" />
+        <LISTITEM value="CANAL APPS" />
+        <LISTITEM value="CANAL SAT" />
+        <LISTITEM value="CANAL SAT MULTIMEDIA" />
+        <LISTITEM value="CANAL SMS" />
+        <LISTITEM value="CANAL USSD" />
+        <LISTITEM value="CAP" />
+        <LISTITEM value="DESARROLLOS TERCEROS" />
+        <LISTITEM value="DWH" />
+        <LISTITEM value="ECOMMERCE" />
+        <LISTITEM value="ECOMMERCE B2B" />
+        <LISTITEM value="FONYOU" />
+        <LISTITEM value="FRONT END" />
+        <LISTITEM value="FRONT END ARQ" />
+        <LISTITEM value="GATEWAY DE PAGOS" />
+        <LISTITEM value="Gestion" />
+        <LISTITEM value="HOTRATING" />
+        <LISTITEM value="HPSA" />
+        <LISTITEM value="INFRAESTRUCTURA" />
+        <LISTITEM value="INSPIRA" />
+        <LISTITEM value="ITEL" />
+        <LISTITEM value="IVR FIJA" />
+        <LISTITEM value="IVR MOVIL" />
+        <LISTITEM value="MEDIACION" />
+        <LISTITEM value="MICROSERVICIOS" />
+        <LISTITEM value="MIDDLEWARE EAP" />
+        <LISTITEM value="MODULO DE GESTION" />
+        <LISTITEM value="NETCRACKER" />
+        <LISTITEM value="NGN" />
+        <LISTITEM value="OCS PRE" />
+        <LISTITEM value="ODI" />
+        <LISTITEM value="OFSC" />
+        <LISTITEM value="ONIX" />
+        <LISTITEM value="ORQUESTADOR" />
+        <LISTITEM value="OTRAS APPS (NO MI CLARO)" />
+        <LISTITEM value="PARADIGMA" />
+        <LISTITEM value="POLIEDRO ACTIVACION POSPAGO" />
+        <LISTITEM value="POLIEDRO ACTIVACIÓN PREPAGO" />
+        <LISTITEM value="POLIEDRO EVIDENTE" />
+        <LISTITEM value="POLIEDRO INSTALACIÓN DE PAQUETES" />
+        <LISTITEM value="POLIEDRO MODULO CONSULTA DE CRÉDITO" />
+        <LISTITEM value="POLIEDRO MÓDULO MAAC" />
+        <LISTITEM value="POLIEDRO MULTIPLAY" />
+        <LISTITEM value="POLIEDRO OTROS" />
+        <LISTITEM value="POLIEDRO PLUS" />
+        <LISTITEM value="POLIEDRO PORTABILIDAD" />
+        <LISTITEM value="POLIEDRO REPOSICIÓN" />
+        <LISTITEM value="POLIEDRO REPOSICION EN VENTA DIGITAL" />
+        <LISTITEM value="POLIEDRO VENTA DE TECNOLOGIA" />
+        <LISTITEM value="POLIEDRO WS" />
+        <LISTITEM value="PORTAL COMERCIAL -FIJA" />
+        <LISTITEM value="PORTAL COMERCIAL -MOVIL" />
+        <LISTITEM value="PORTAL E-COMMCERCE B2C" />
+        <LISTITEM value="PORTAL PAC" />
+        <LISTITEM value="PORTALES" />
+        <LISTITEM value="PORTALES MI CLARO" />
+        <LISTITEM value="PORTALES SAP" />
+        <LISTITEM value="PRUEBA" />
+        <LISTITEM value="RR" />
+        <LISTITEM value="SAP FINANZAS" />
+        <LISTITEM value="SAP LOGÍSTICO" />
+        <LISTITEM value="SAP OTROS" />
+        <LISTITEM value="SAP VENTAS" />
+        <LISTITEM value="SGA" />
+        <LISTITEM value="SICCON" />
+        <LISTITEM value="SIMULADOR DE FINANCIAMIENTO" />
+        <LISTITEM value="SISTEMAS DE RECAUDO" />
+        <LISTITEM value="SMALLWORLD" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="TURNOS" />
+        <LISTITEM value="UCM" />
+        <LISTITEM value="VISOR MODULOS" />
+        <LISTITEM value="VISOR MULTIPLAY" />
+        <LISTITEM value="VISOR VENTA DIGITAL" />
+        <LISTITEM value="WEB SERVICES" />
+        <LISTITEM value="XDR" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto DESEMPEÑO CALIDAD Y TESTING">
+        <LISTITEM value="CDR's" />
+        <LISTITEM value="GESTIÓN TESTING" />
+        <LISTITEM value="RAC" />
+        <LISTITEM value="SOPORTE PRUEBAS" />
+        <LISTITEM value="AUTOMATIZACION" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTSubEstadoToDo">
+        <LISTITEM value="Asignada Alto Nivel" />
+        <LISTITEM value="Creada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTSubEstadoInProgress">
+        <LISTITEM value="Aprobada" />
+        <LISTITEM value="Asignada Detalle" />
+        <LISTITEM value="Estimada" />
+        <LISTITEM value="Estimada por Aprobar" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTSubEstadoDone">
+        <LISTITEM value="Finalizada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTSubEstadoRemoved">
+        <LISTITEM value="Cancelada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTDisciplina">
+        <LISTITEM value="Desarrollo" />
+        <LISTITEM value="Pruebas" />
+        <LISTITEM value="Requerimientos" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTTipoDesarrollo">
+        <LISTITEM value="Desarrollo de Software" />
+        <LISTITEM value="Desarrollo de Software SCRUM" />
+        <LISTITEM value="Soporte a Desarrollo de Software" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTTipoPruebas">
+        <LISTITEM value="Automatización de Pruebas" />
+        <LISTITEM value="Gestión de Ambientes de Pruebas" />
+        <LISTITEM value="Gestión de Estimaciones Alto Nivel" />
+        <LISTITEM value="Gestión de Pruebas de Aceptación" />
+        <LISTITEM value="Gestión del Conocimiento" />
+        <LISTITEM value="Gestión del Coordinador de Apoyo" />
+        <LISTITEM value="Gestión del Líder de Apoyo" />
+        <LISTITEM value="Gestión y/o Extracción de Datos" />
+        <LISTITEM value="Pruebas Agiles" />
+        <LISTITEM value="Pruebas Manuales" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTTipoRequerimientos">
+        <LISTITEM value="Gestión de Requerimientos" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTTallaAltoNivel">
+        <LISTITEM value="L" />
+        <LISTITEM value="M" />
+        <LISTITEM value="S" />
+        <LISTITEM value="XL" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTTallaDetalle">
+        <LISTITEM value="L" />
+        <LISTITEM value="M" />
+        <LISTITEM value="S" />
+        <LISTITEM value="XL" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTClasePresupuesto">
+        <LISTITEM value="CAPEX" />
+        <LISTITEM value="OPEX" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTFacturableEntrega">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTEntregaPaquete">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTPagadaEntrega">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="OTCentroCosto">
+        <LISTITEM value="02000JAA00" />
+        <LISTITEM value="02000JAB00" />
+        <LISTITEM value="02000JAC00" />
+        <LISTITEM value="02000JAD00" />
+        <LISTITEM value="02000JAE00" />
+        <LISTITEM value="02000JAZ00" />
+        <LISTITEM value="02000JBA00" />
+        <LISTITEM value="02000JBB00" />
+        <LISTITEM value="02000JBZ00" />
+        <LISTITEM value="02000JCA00" />
+        <LISTITEM value="02000JCB00" />
+        <LISTITEM value="02000JCC00" />
+        <LISTITEM value="02000JCD00" />
+        <LISTITEM value="02000JCE00" />
+        <LISTITEM value="02000JCF00" />
+        <LISTITEM value="02000JCG00" />
+        <LISTITEM value="02000JCZ00" />
+        <LISTITEM value="02000JDA00" />
+        <LISTITEM value="02000JDB00" />
+        <LISTITEM value="02000JDC00" />
+        <LISTITEM value="02000JDD00" />
+        <LISTITEM value="02000JDE00" />
+        <LISTITEM value="02000JDF00" />
+        <LISTITEM value="02000JDZ00" />
+        <LISTITEM value="02000JZA00" />
+        <LISTITEM value="02000JZB00" />
+        <LISTITEM value="02000JZC00" />
+        <LISTITEM value="02000JZD00" />
+        <LISTITEM value="02000JZE00" />
+        <LISTITEM value="02000JZF00" />
+        <LISTITEM value="02000JZG00" />
+        <LISTITEM value="02000JZH00" />
+        <LISTITEM value="02000JZI00" />
+        <LISTITEM value="02000JZZ00" />
+        <LISTITEM value="06000JAA00" />
+        <LISTITEM value="06000JAB00" />
+        <LISTITEM value="06000JAC00" />
+        <LISTITEM value="06000JAD00" />
+        <LISTITEM value="06000JAE00" />
+        <LISTITEM value="06000JAZ00" />
+        <LISTITEM value="06000JBA00" />
+        <LISTITEM value="06000JBB00" />
+        <LISTITEM value="06000JBZ00" />
+        <LISTITEM value="06000JCA00" />
+        <LISTITEM value="06000JCB00" />
+        <LISTITEM value="06000JCC00" />
+        <LISTITEM value="06000JCD00" />
+        <LISTITEM value="06000JCE00" />
+        <LISTITEM value="06000JCF00" />
+        <LISTITEM value="06000JCG00" />
+        <LISTITEM value="06000JCZ00" />
+        <LISTITEM value="06000JDA00" />
+        <LISTITEM value="06000JDB00" />
+        <LISTITEM value="06000JDC00" />
+        <LISTITEM value="06000JDD00" />
+        <LISTITEM value="06000JDE00" />
+        <LISTITEM value="06000JDF00" />
+        <LISTITEM value="06000JDZ00" />
+        <LISTITEM value="06000JZZ00" />
+        <LISTITEM value="06300JAA00" />
+        <LISTITEM value="06300JAB00" />
+        <LISTITEM value="06300JAC00" />
+        <LISTITEM value="06300JAD00" />
+        <LISTITEM value="06300JAE00" />
+        <LISTITEM value="06300JAZ00" />
+        <LISTITEM value="06300JBA00" />
+        <LISTITEM value="06300JBB00" />
+        <LISTITEM value="06300JBC00" />
+        <LISTITEM value="06300JBD00" />
+        <LISTITEM value="06300JBE00" />
+        <LISTITEM value="06300JCA00" />
+        <LISTITEM value="06300JCB00" />
+        <LISTITEM value="06300JCC00" />
+        <LISTITEM value="06300JCD00" />
+        <LISTITEM value="06300JCZ00" />
+        <LISTITEM value="06300JDA00" />
+        <LISTITEM value="06300JDB00" />
+        <LISTITEM value="06300JDC00" />
+        <LISTITEM value="06300JDD00" />
+        <LISTITEM value="06300JDZ00" />
+        <LISTITEM value="06300JZA00" />
+        <LISTITEM value="06300JZZ00" />
+        <LISTITEM value="0699A03024" />
+        <LISTITEM value="0699A03025" />
+        <LISTITEM value="0699A03027" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskSubEstadoToDo">
+        <LISTITEM value="Creada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskSubEstadoInProgress">
+        <LISTITEM value="Activa" />
+        <LISTITEM value="Resuelta" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskSubEstadoDone">
+        <LISTITEM value="Finalizada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskSubEstadoRemoved">
+        <LISTITEM value="Cancelada" />
+        <LISTITEM value="Rechazada" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskTipoTarea">
+        <LISTITEM value="Desfase" />
+        <LISTITEM value="Ocupación" />
+        <LISTITEM value="Solicitud de estimación" />
+        <LISTITEM value="Solicitud de pruebas" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskDesfaseCausal">
+        <LISTITEM value="Adelanto actividades por reprogramación y prioridades" />
+        <LISTITEM value="Atraso por incumplimiento de entregas iniciales/intermedias que genera tiempo ocioso" />
+        <LISTITEM value="Cambio en el alcance de la prueba" />
+        <LISTITEM value="Desconocimiento del negocio" />
+        <LISTITEM value="Detección y reporte de hallazgos, Cierre de Hallazgos en BugTracker" />
+        <LISTITEM value="Diferencia entre el tiempo estimado por el Analista de pruebas y el tiempo real" />
+        <LISTITEM value="Disminución en tiempo por no ejecución de la regresión causado por cero errores encontrados" />
+        <LISTITEM value="Documentación incompleta, desactualizada,contrapuesta o ambigua" />
+        <LISTITEM value="Ejecución simultánea de procesos en ambientes pruebas compartidos" />
+        <LISTITEM value="Ejecución smoke test por versiones intermedias" />
+        <LISTITEM value="Generación por QA del set de datos" />
+        <LISTITEM value="Gestion de la prueba" />
+        <LISTITEM value="Inestabilidad durante la ejecución de ambiente de pruebas" />
+        <LISTITEM value="Inestabilidad Inicial de ambiente de pruebas" />
+        <LISTITEM value="Mantenimiento/Instalación no planeado de HW/SW en máquinas cliente" />
+        <LISTITEM value="Novedad por ausencia en el equipo de trabajo" />
+        <LISTITEM value="Problemas de conectividad, lentitud o caída del canal" />
+        <LISTITEM value="Reapertura de Hallazgos" />
+        <LISTITEM value="Reprocesos por generación de datos de otras áreas diferentes a QA" />
+        <LISTITEM value="Reprogramación de tiempos dentro de la misma prueba" />
+        <LISTITEM value="Reprogramación de tiempos en otras pruebas" />
+        <LISTITEM value="Reuniones no planeadas o interrupciones por parte de Comcel o del Outsourcing" />
+        <LISTITEM value="Sincronización de equipo trabajo que tiene dependencias entre las pruebas o actividades" />
+        <LISTITEM value="Sobreesfuerzo sin cambios en funcionalidades y/o transacciones o de recursos" />
+        <LISTITEM value="Transferencia de conocimiento al interior del proveedor del servicio de pruebas" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskDesfaseResponsable">
+        <LISTITEM value="Aliado Testing" />
+        <LISTITEM value="Desarrollo" />
+        <LISTITEM value="Infraestructura Claro" />
+        <LISTITEM value="Negocio" />
+        <LISTITEM value="Testing Claro" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskDesfaseAmbiente">
+        <LISTITEM value="ACTIVAQA - GCS" />
+        <LISTITEM value="ALMQA - GCS" />
+        <LISTITEM value="ALMQAMIG - GCS" />
+        <LISTITEM value="BILLROQA - GCMI" />
+        <LISTITEM value="BSCSQA - GCS" />
+        <LISTITEM value="CICLOPQA - GPRE" />
+        <LISTITEM value="COMCORPQA - GCRMI" />
+        <LISTITEM value="COMHP40 - GCS" />
+        <LISTITEM value="COMHP44 - GCS" />
+        <LISTITEM value="DWHQA - DWH" />
+        <LISTITEM value="HPSMPRU - GGSI" />
+        <LISTITEM value="ITELSOA - GPRE" />
+        <LISTITEM value="PORTALQA - GSAF" />
+        <LISTITEM value="PQACTIVA - GCS" />
+        <LISTITEM value="PQBSCS - GCS" />
+        <LISTITEM value="RTXQA - GSAF" />
+        <LISTITEM value="SISCOQA - GSAF" />
+        <LISTITEM value="SMOQA - GNT" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNSubEstadoNew">
+        <LISTITEM value="Creado" />
+        <LISTITEM value="Creado (Negocio)" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNSubEstadoInProgress">
+        <LISTITEM value="Aprobado" />
+        <LISTITEM value="Documentado" />
+        <LISTITEM value="Documentado (IT)" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNSubEstadoDone">
+        <LISTITEM value="Finalizado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNSubEstadoRemoved">
+        <LISTITEM value="Cancelado" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNBlocked">
+        <LISTITEM value="No" />
+        <LISTITEM value="Si" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNPrioridadRequerimientoNegocio">
+        <LISTITEM value="1" />
+        <LISTITEM value="2" />
+        <LISTITEM value="3" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RNFaseRequerimientoNegocio">
+        <LISTITEM value="1" />
+        <LISTITEM value="10" />
+        <LISTITEM value="11" />
+        <LISTITEM value="12" />
+        <LISTITEM value="13" />
+        <LISTITEM value="14" />
+        <LISTITEM value="15" />
+        <LISTITEM value="16" />
+        <LISTITEM value="17" />
+        <LISTITEM value="18" />
+        <LISTITEM value="19" />
+        <LISTITEM value="2" />
+        <LISTITEM value="20" />
+        <LISTITEM value="21" />
+        <LISTITEM value="22" />
+        <LISTITEM value="23" />
+        <LISTITEM value="24" />
+        <LISTITEM value="25" />
+        <LISTITEM value="26" />
+        <LISTITEM value="27" />
+        <LISTITEM value="28" />
+        <LISTITEM value="29" />
+        <LISTITEM value="3" />
+        <LISTITEM value="30" />
+        <LISTITEM value="31" />
+        <LISTITEM value="32" />
+        <LISTITEM value="33" />
+        <LISTITEM value="34" />
+        <LISTITEM value="35" />
+        <LISTITEM value="36" />
+        <LISTITEM value="37" />
+        <LISTITEM value="38" />
+        <LISTITEM value="39" />
+        <LISTITEM value="4" />
+        <LISTITEM value="40" />
+        <LISTITEM value="41" />
+        <LISTITEM value="42" />
+        <LISTITEM value="43" />
+        <LISTITEM value="44" />
+        <LISTITEM value="45" />
+        <LISTITEM value="46" />
+        <LISTITEM value="47" />
+        <LISTITEM value="48" />
+        <LISTITEM value="49" />
+        <LISTITEM value="5" />
+        <LISTITEM value="50" />
+        <LISTITEM value="51" />
+        <LISTITEM value="52" />
+        <LISTITEM value="53" />
+        <LISTITEM value="54" />
+        <LISTITEM value="55" />
+        <LISTITEM value="56" />
+        <LISTITEM value="57" />
+        <LISTITEM value="58" />
+        <LISTITEM value="59" />
+        <LISTITEM value="6" />
+        <LISTITEM value="60" />
+        <LISTITEM value="61" />
+        <LISTITEM value="62" />
+        <LISTITEM value="63" />
+        <LISTITEM value="64" />
+        <LISTITEM value="65" />
+        <LISTITEM value="66" />
+        <LISTITEM value="67" />
+        <LISTITEM value="68" />
+        <LISTITEM value="69" />
+        <LISTITEM value="7" />
+        <LISTITEM value="70" />
+        <LISTITEM value="71" />
+        <LISTITEM value="72" />
+        <LISTITEM value="73" />
+        <LISTITEM value="74" />
+        <LISTITEM value="75" />
+        <LISTITEM value="76" />
+        <LISTITEM value="77" />
+        <LISTITEM value="78" />
+        <LISTITEM value="79" />
+        <LISTITEM value="8" />
+        <LISTITEM value="80" />
+        <LISTITEM value="9" />
+      </GLOBALLIST>
+      <GLOBALLIST name="RLPLinea de producto GESTION INFO Y BI">
+        <LISTITEM value="DESARROLLO AGIL" />
+        <LISTITEM value="DESARROLLO TRADICIONAL" />
+        <LISTITEM value="MEJORA CONTINUA" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskTipoOcupacion">
+        <LISTITEM value="Operación" />
+        <LISTITEM value="Req. Tradional" />
+        <LISTITEM value="Value Stream" />
+        <LISTITEM value="Celulas Exp." />
+        <LISTITEM value="Pry. Estrategico" />
+        <LISTITEM value="Proyecto Neg" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskOcupacionProyecto">
+        <LISTITEM value="Amazon Prime Video" />
+        <LISTITEM value="Aprovisionamiento dinámico Inspira" />
+        <LISTITEM value="Asistente de voz" />
+        <LISTITEM value="Asistentes Digitales – Atención Cognitiva (Voz – Texto) - Servicios Hitss" />
+        <LISTITEM value="Avaya Workspace" />
+        <LISTITEM value="BRIEF 37251 - Nuevo 83843 Chatbot AMX Microsoft" />
+        <LISTITEM value="Brief 87554 Idea 1462 Herramienta Préstame tus Manos" />
+        <LISTITEM value="BRIEF 87858 Idea 1776 Proyecto Estratégico Atención Diferencial - Programa Primeros en Experiencia" />
+        <LISTITEM value="Carro conectado masivo" />
+        <LISTITEM value="Centralización numeración interna Cisco - Instalación CUBE" />
+        <LISTITEM value="CITOFONIA CRC 5826" />
+        <LISTITEM value="Claro Box" />
+        <LISTITEM value="Claro Gaming" />
+        <LISTITEM value="CMP/IAP INTERNET OF THING AMERICA MOVIL PLATAFORM" />
+        <LISTITEM value="CMS-Content Manager+BIL GW Inspira - Producto" />
+        <LISTITEM value="Crc - Numeración 10 Dígitos Fijo" />
+        <LISTITEM value="Crc - Numeración Iot Y Apertura Nuevo Rango" />
+        <LISTITEM value="Crédito Digital" />
+        <LISTITEM value="Customer Engagement" />
+        <LISTITEM value="Ecommerce V9 (Evolución Tienda+B2B2C+ClaroShop)" />
+        <LISTITEM value="Evolución Canales EYN (Empresas y Negocios)" />
+        <LISTITEM value="Evolución de Productos y Servicios - Datacenter Interconect" />
+        <LISTITEM value="Evolución de Productos y Servicios - Nagra ( Interno &amp; Externo)" />
+        <LISTITEM value="Fabrica de Innovación" />
+        <LISTITEM value="Galileo" />
+        <LISTITEM value="Gestión de Proyectos de Red Corporativa" />
+        <LISTITEM value="Gestión de Riesgos" />
+        <LISTITEM value="HuB IoT GM" />
+        <LISTITEM value="ID-00487 Comisiones - Callidus" />
+        <LISTITEM value="ID-00577 Home &amp; Business" />
+        <LISTITEM value="ID-00582 ROADMAP DIGITAL (eCommerce v 8.5)" />
+        <LISTITEM value="ID-00584 100%Digital PREPAGO/POSTPAGO" />
+        <LISTITEM value="ID-00587 Omnicanalidad - saleforce" />
+        <LISTITEM value="ID-00591 Giros Postales" />
+        <LISTITEM value="ID-00592 Inteligencia de datos" />
+        <LISTITEM value="ID-00593 Logística Omnicanal" />
+        <LISTITEM value="ID-00596 Evolución IVR" />
+        <LISTITEM value="ID-00598 Orquestador de Servicios Pospago" />
+        <LISTITEM value="ID-00604 Atencion Inmediata - Fase 2" />
+        <LISTITEM value="ID-00609 Identidad Digital" />
+        <LISTITEM value="ID-00610 Atienda - Fase 3" />
+        <LISTITEM value="ID-00623 Renovación USSD" />
+        <LISTITEM value="ID-00624 Servicios OTTs que usan el Hub Bidireccional" />
+        <LISTITEM value="ID-00670 PRY-801 Sistemas Corporativos (TRANSFORMA)" />
+        <LISTITEM value="ID-01729 Transacciones Riesgosas" />
+        <LISTITEM value="ID-01730 Score Crediticio" />
+        <LISTITEM value="ID-01734 Claro Shop" />
+        <LISTITEM value="ID-01735 Calidad de red" />
+        <LISTITEM value="ID-01737 Whatsapp" />
+        <LISTITEM value="ID-01738 Campañas Efectivas" />
+        <LISTITEM value="ID-01739 Billetera Móvil" />
+        <LISTITEM value="ID-01740 Biometria y operador Biometrico" />
+        <LISTITEM value="ID-02062 Migración GW de pagos" />
+        <LISTITEM value="ID-02089 Ampliación infraestructura - Licencias para ambiente Q/A Api management" />
+        <LISTITEM value="ID-02091 Inhabilitación Terminales y Tecnologia F3" />
+        <LISTITEM value="ID-02093 Red Maestra" />
+        <LISTITEM value="ID-02174 Android TV" />
+        <LISTITEM value="ID-02253 Nuevos Medios de Pago" />
+        <LISTITEM value="ID-02290 HBO MAX (MVP2)" />
+        <LISTITEM value="ID-2172 Implementación CA" />
+        <LISTITEM value="Idea 1906 Disney Plus" />
+        <LISTITEM value="Implementación de Turnos" />
+        <LISTITEM value="Inspira B2C" />
+        <LISTITEM value="Instalación y Mantenimiento Clientes - Aceleración Mejoras Operación" />
+        <LISTITEM value="Inteligencia Comercial Pre-pago" />
+        <LISTITEM value="Mintic - Evolución desarrollos operativos (ODI+Equipo)" />
+        <LISTITEM value="Mobile Marketing" />
+        <LISTITEM value="Monitoreo Canales" />
+        <LISTITEM value="Motor de Validación Identidad" />
+        <LISTITEM value="P&amp;D Optimizaciones y crecimientos VAS CLOUD" />
+        <LISTITEM value="Plataforma de validación de identidad y riesgo" />
+        <LISTITEM value="Procesos Ideales (15 Priorizados)" />
+        <LISTITEM value="Producto - Mejoras cloud público" />
+        <LISTITEM value="Proyectos de la Dirección Evolución Digital" />
+        <LISTITEM value="RPA - Automatización Fábricas" />
+        <LISTITEM value="Seguridad y monitoreo para el hogar" />
+        <LISTITEM value="Seguro fácil y asistencias T-Resuelve" />
+        <LISTITEM value="Super APP" />
+        <LISTITEM value="TIDAT - Air-e" />
+        <LISTITEM value="TIDAT - Antillana" />
+        <LISTITEM value="TIDAT - Apoyo Comercial / Preventa" />
+        <LISTITEM value="TIDAT - CEET" />
+        <LISTITEM value="TIDAT - Claro Perú" />
+        <LISTITEM value="TIDAT - Claro Región Andina/Caribe" />
+        <LISTITEM value="TIDAT - Crystal" />
+        <LISTITEM value="TIDAT - Ecopetrol" />
+        <LISTITEM value="TIDAT - Episol" />
+        <LISTITEM value="TIDAT - Greenland" />
+        <LISTITEM value="TIDAT - Haceb" />
+        <LISTITEM value="TIDAT - Procaps" />
+        <LISTITEM value="TIDAT - Proindesa" />
+        <LISTITEM value="TIDAT - Seguros Confianza" />
+        <LISTITEM value="TIDAT - Sura" />
+        <LISTITEM value="Upgrade Plataforma de Telefonía Corporativa Cisco" />
+        <LISTITEM value="Value Stream - Uso Internet" />
+        <LISTITEM value="VAS CLOUD INSPIRA" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskOcupacionEspecialidadTecnologia">
+        <LISTITEM value=".NET" />
+        <LISTITEM value="Abap" />
+        <LISTITEM value="Accesos" />
+        <LISTITEM value="Almacenamiento" />
+        <LISTITEM value="Angular" />
+        <LISTITEM value="Backend" />
+        <LISTITEM value="Backup" />
+        <LISTITEM value="Balanceadores" />
+        <LISTITEM value="BI" />
+        <LISTITEM value="BSCS" />
+        <LISTITEM value="Capa Media" />
+        <LISTITEM value="Ciber Seguridad" />
+        <LISTITEM value="Clientes Especiales" />
+        <LISTITEM value="Cloud" />
+        <LISTITEM value="CoE" />
+        <LISTITEM value="Convergencia" />
+        <LISTITEM value="Estandar" />
+        <LISTITEM value="Frontend" />
+        <LISTITEM value="Java" />
+        <LISTITEM value="Java Oracle" />
+        <LISTITEM value="NOC" />
+        <LISTITEM value="Oracle" />
+        <LISTITEM value="PCAASS" />
+        <LISTITEM value="PL" />
+        <LISTITEM value="React" />
+        <LISTITEM value="Recursos Tecnologicos" />
+        <LISTITEM value="RED" />
+        <LISTITEM value="RPG" />
+        <LISTITEM value="RR" />
+        <LISTITEM value="SAP" />
+        <LISTITEM value="SAP Basis" />
+        <LISTITEM value="Seguridad Administrada" />
+        <LISTITEM value="Seguridad Fisica" />
+        <LISTITEM value="SOA" />
+        <LISTITEM value="SQL" />
+        <LISTITEM value="Telefonia" />
+        <LISTITEM value="Tools" />
+        <LISTITEM value="UNIX" />
+        <LISTITEM value="VIP" />
+        <LISTITEM value="Virtualizacion" />
+        <LISTITEM value="Visual Basic" />
+        <LISTITEM value="Windows" />
+      </GLOBALLIST>
+      <GLOBALLIST name="TaskOcupacionEmpresaColaborador">
+        <LISTITEM value="Claro" />
+        <LISTITEM value="Hitss" />
+        <LISTITEM value="Otro" />
+      </GLOBALLIST>
+    </GLOBALLISTS>
+    <FIELDS>
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Iteration ID" refname="System.IterationId" type="Integer" />
+      <FIELD name="External Link Count" refname="System.ExternalLinkCount" type="Integer" />
+      <FIELD name="Team Project" refname="System.TeamProject" type="String" reportable="dimension" />
+      <FIELD name="Parent" refname="System.Parent" type="Integer" />
+      <FIELD name="Remote Link Count" refname="System.RemoteLinkCount" type="Integer" />
+      <FIELD name="Comment Count" refname="System.CommentCount" type="Integer" />
+      <FIELD name="Hyperlink Count" refname="System.HyperLinkCount" type="Integer" />
+      <FIELD name="Attached File Count" refname="System.AttachedFileCount" type="Integer" />
+      <FIELD name="Node Name" refname="System.NodeName" type="String" />
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Revised Date" refname="System.RevisedDate" type="DateTime" reportable="detail" />
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Area ID" refname="System.AreaId" type="Integer" />
+      <FIELD name="Authorized As" refname="System.AuthorizedAs" type="String" syncnamechanges="true" />
+      <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension" />
+      <FIELD name="Authorized Date" refname="System.AuthorizedDate" type="DateTime" />
+      <FIELD name="Watermark" refname="System.Watermark" type="Integer" />
+      <FIELD name="Rev" refname="System.Rev" type="Integer" reportable="dimension" />
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension" />
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>The person currently owning this task</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Work Item Type" refname="System.WorkItemType" type="String" reportable="dimension" />
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
+      <FIELD name="Description" refname="System.Description" type="HTML" />
+      <FIELD name="History" refname="System.History" type="History" />
+      <FIELD name="Related Link Count" refname="System.RelatedLinkCount" type="Integer" />
+      <FIELD name="Tags" refname="System.Tags" type="PlainText" />
+      <FIELD name="Board Column" refname="System.BoardColumn" type="String" reportable="dimension" />
+      <FIELD name="Board Column Done" refname="System.BoardColumnDone" type="Boolean" reportable="dimension" />
+      <FIELD name="Board Lane" refname="System.BoardLane" type="String" reportable="dimension" />
+      <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
+        <HELPTEXT>Importance to business</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="2" />
+      </FIELD>
+      <FIELD name="Remaining Work" refname="Microsoft.VSTS.Scheduling.RemainingWork" type="Double" reportable="measure" formula="sum">
+        <HELPTEXT>An estimate of the number of units of work remaining to complete this task</HELPTEXT>
+      </FIELD>
+      <FIELD name="Backlog Priority" refname="Microsoft.VSTS.Common.BacklogPriority" type="Double" reportable="detail" />
+      <FIELD name="Activity" refname="Microsoft.VSTS.Common.Activity" type="String" reportable="dimension">
+        <HELPTEXT>Type of work involved</HELPTEXT>
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="Deployment" />
+          <LISTITEM value="Design" />
+          <LISTITEM value="Development" />
+          <LISTITEM value="Documentation" />
+          <LISTITEM value="Requirements" />
+          <LISTITEM value="Testing" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD name="Blocked" refname="Microsoft.VSTS.CMMI.Blocked" type="String" reportable="dimension">
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="No" />
+          <LISTITEM value="Sí" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated Date" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated By" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="ID Previo" refname="Claro.ALM.IdPrevio" type="Integer" reportable="detail">
+        <READONLY />
+      </FIELD>
+      <FIELD name="Sub Estado" refname="Claro.ALM.SubEstado" type="String" reportable="detail">
+        <HELPTEXT>Sub Estado</HELPTEXT>
+        <REQUIRED />
+        <WHEN field="System.State" value="Removed">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskSubEstadoRemoved" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskSubEstadoDone" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="In Progress">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskSubEstadoInProgress" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="To Do">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskSubEstadoToDo" />
+          </ALLOWEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD name="Gerencia" refname="Claro.ALM.Gerencia" type="String" reportable="dimension">
+        <HELPTEXT>Gerencia asociada a la tarea</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Solicitud de pruebas">
+          <DEFAULT from="value" value="DESEMPEÑO CALIDAD Y TESTING" />
+          <ALLOWEDVALUES expanditems="true">
+            <LISTITEM value="DESEMPEÑO CALIDAD Y TESTING" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Solicitud de pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="GdPGerencia" />
+            <LISTITEM value="ARQUITECTURA" />
+          </ALLOWEDVALUES>
+        </WHENNOT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="Tipo de Tarea" refname="Claro.ALM.TipoTarea" type="String" reportable="dimension">
+        <HELPTEXT>Tipo de tarea definida</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskTipoTarea" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+      </FIELD>
+      <!-- Inicio ****** OCUPACION ****** -->
+      <FIELD name="Fecha Inicio" refname="Claro.ALM.Ocupacion.FechaInicio" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha Inicio</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Fecha Fin" refname="Claro.ALM.Ocupacion.FechaFin" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha Fin</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Tipo Proyecto" refname="Claro.ALM.Ocupacion.TipoProyecto" type="String" reportable="dimension">
+        <HELPTEXT>Tipo Proyecto</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Ocupación">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskTipoOcupacion" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Proyecto" refname="Claro.ALM.Ocupacion.Proyecto" type="String" reportable="dimension">
+        <HELPTEXT>Proyecto</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Ocupación">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskOcupacionProyecto" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Porcentaje de ocupación (%)" refname="Claro.ALM.Ocupacion.Porcentaje" type="Integer" reportable="dimension">
+        <HELPTEXT>Porcentaje de ocupación (%)</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Especialidad - Tecnología" refname="Claro.ALM.Ocupacion.EspecialidadTecnologia" type="String" reportable="dimension">
+        <HELPTEXT>Especialidad - Tecnología</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Ocupación">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskOcupacionEspecialidadTecnologia" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Empresa Colaborador" refname="Claro.ALM.Ocupacion.EmpresaColaborador" type="String" reportable="dimension">
+        <HELPTEXT>Empresa Colaborador</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Ocupación">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Ocupación">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskOcupacionEmpresaColaborador" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <!-- Fin Campos ***** OCUPACION ***** -->
+      <FIELD name="Causal del Desfase" refname="Claro.ALM.Desfase.Causal" type="String" reportable="dimension">
+        <HELPTEXT>Causal del desfase</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Desfase">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Desfase">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskDesfaseCausal" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Responsable del Desfase" refname="Claro.ALM.Desfase.Responsable" type="String" reportable="dimension">
+        <HELPTEXT>Responsable del desfase</HELPTEXT>
+        <WHEN field="Claro.ALM.TipoTarea" value="Desfase">
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Desfase">
+          <EMPTY />
+        </WHENNOT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="TaskDesfaseResponsable" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Tiempo de Desfase" refname="Claro.ALM.Desfase.Tiempo" type="Double" reportable="dimension">
+        <HELPTEXT>Duración del desfase (horas)</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Desfase">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Fecha Solicitud a Testing" refname="Claro.ALM.SolicitudTesting.Fecha" type="DateTime" reportable="dimension">
+        <HELPTEXT>Fecha Certificada Testing</HELPTEXT>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Solicitud de pruebas">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Ambiente del Desfase" refname="Claro.ALM.Desfase.Ambiente" type="String" reportable="dimension">
+        <HELPTEXT>Ambiente</HELPTEXT>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Ejecución simultánea de procesos en ambientes pruebas compartidos">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskDesfaseAmbiente" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Inestabilidad durante la ejecución de ambiente de pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskDesfaseAmbiente" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Inestabilidad Inicial de ambiente de pruebas">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="TaskDesfaseAmbiente" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Adelanto actividades por reprogramación y prioridades">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Atraso por incumplimiento de entregas iniciales/intermedias que genera tiempo ocioso">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Desconocimiento del negocio">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Detección y reporte de hallazgos, Cierre de Hallazgos en BugTracker">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Diferencia entre el tiempo estimado por el Analista de pruebas y el tiempo real">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Disminución en tiempo por no ejecución de la regresión causado por cero errores encontrados">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Cambio en el alcance de la prueba">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Ejecución smoke test por versiones intermedias">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Generación por QA del set de datos">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Gestion de la prueba">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Mantenimiento/Instalación no planeado de HW/SW en máquinas cliente">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Novedad por ausencia en el equipo de trabajo">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Problemas de conectividad, lentitud o caída del canal">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Reapertura de Hallazgos">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Reprocesos por generación de datos de otras áreas diferentes a QA">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Reprogramación de tiempos dentro de la misma prueba">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Reprogramación de tiempos en otras pruebas">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Reuniones no planeadas o interrupciones por parte de Comcel o del Outsourcing">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Sincronización de equipo trabajo que tiene dependencias entre las pruebas o actividades">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Sobreesfuerzo sin cambios en funcionalidades y/o transacciones o de recursos">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="Transferencia de conocimiento al interior del proveedor del servicio de pruebas">
+          <EMPTY />
+        </WHEN>
+        <WHEN field="Claro.ALM.Desfase.Causal" value="">
+          <EMPTY />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.TipoTarea" value="Desfase">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Done">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Scheduling.RemainingWork">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CMMI.Blocked">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="In Progress">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Removed">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Scheduling.RemainingWork">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.CMMI.Blocked">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="To Do">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="In Progress" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Additional work found" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="To Do" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Work started" />
+          </REASONS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StartWork" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="Removed" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Reconsidering the Task" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Additional work found" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="Work stopped" />
+          </REASONS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StopWork" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="" to="To Do">
+          <REASONS>
+            <DEFAULTREASON value="New task" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Claro.ALM.SubEstado">
+              <COPY from="value" value="Creada" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="90">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
+          </Column>
+          <Column PercentWidth="10">
+            <Control FieldName="System.ID" Type="FieldControl" ControlFontSize="large" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="Ite&amp;ration" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Assi&amp;gned To" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="Stat&amp;e" LabelPosition="Left" />
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="&amp;Area" LabelPosition="Left" />
+                <Control FieldName="System.Reason" Type="FieldControl" Label="Reason" LabelPosition="Left" ReadOnly="True" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Details">
+              <Column PercentWidth="100">
+                <Control FieldName="Microsoft.VSTS.Common.Priority" Type="FieldControl" Label="Priority" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.RemainingWork" Type="FieldControl" Label="Remaining Work" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.Activity" Type="FieldControl" Label="Activity" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.CMMI.Blocked" Type="FieldControl" Label="Blocked" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <TabGroup>
+              <Tab Label="Description">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="50">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="History">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Links">
+                <Control Type="LinksControl" Label="" LabelPosition="Top" Name="GeneralLinks">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Attachments">
+                <Control Type="AttachmentsControl" Label="" LabelPosition="Top" />
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+      <WebLayout>
+        <SystemControls>
+          <Control Type="FieldControl" FieldName="System.Title" EmptyText="Enter title" />
+          <Control Label="Assi&amp;gned To" Type="FieldControl" FieldName="System.AssignedTo" />
+          <Control Label="Stat&amp;e" Type="FieldControl" FieldName="System.State" />
+          <Control Label="Reason" Type="FieldControl" FieldName="System.Reason" />
+          <Control Label="&amp;Area" Type="WorkItemClassificationControl" FieldName="System.AreaPath" />
+          <Control Label="Ite&amp;ration" Type="WorkItemClassificationControl" FieldName="System.IterationPath" />
+          <Control Label="History" Type="WorkItemLogControl" FieldName="System.History" />
+          <Control Label="Links" Type="LinksControl" Name="Links" />
+          <Control Label="Attachments" Type="AttachmentsControl" Name="Attachments" />
+        </SystemControls>
+        <Page Label="Details" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Control">
+              <Control Label="ID Previo:" Type="FieldControl" FieldName="Claro.ALM.IdPrevio" />
+              <Control Label="Sub Estado:" Type="FieldControl" FieldName="Claro.ALM.SubEstado" />
+            </Group>
+            <Group Label="Descripción">
+              <Control Label="Descripción" Type="HtmlFieldControl" FieldName="System.Description" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Planeación">
+              <Control Label="Prioridad" Type="FieldControl" FieldName="Microsoft.VSTS.Common.Priority" />
+              <Control Label="Remaining Work" Type="FieldControl" FieldName="Microsoft.VSTS.Scheduling.RemainingWork" />
+              <Control Label="Actividad" Type="FieldControl" FieldName="Microsoft.VSTS.Common.Activity" />
+              <Control Label="Bloqueado" Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.Blocked" />
+            </Group>
+            <Group Label="Clasificación">
+              <Control Label="Tipo de tarea" Type="FieldControl" FieldName="Claro.ALM.TipoTarea" />
+              <Control Label="Fecha Inicio Ocupación" Type="DateTimeControl" FieldName="Claro.ALM.Ocupacion.FechaInicio" />
+              <Control Label="Fecha Fin Ocupación" Type="DateTimeControl" FieldName="Claro.ALM.Ocupacion.FechaFin" />
+              <Control Label="Tipo Proyecto" Type="FieldControl" FieldName="Claro.ALM.Ocupacion.TipoProyecto" />
+              <Control Label="Proyecto" Type="FieldControl" FieldName="Claro.ALM.Ocupacion.Proyecto" />
+              <Control Label="Porcentaje de Ocupación (%)" Type="FieldControl" FieldName="Claro.ALM.Ocupacion.Porcentaje" />
+              <Control Label="Especialidad - Tecnología" Type="FieldControl" FieldName="Claro.ALM.Ocupacion.EspecialidadTecnologia" />
+              <Control Label="Empresa Colaborador" Type="FieldControl" FieldName="Claro.ALM.Ocupacion.EmpresaColaborador" />
+              <Control Label="Gerencia" Type="FieldControl" FieldName="Claro.ALM.Gerencia" />
+              <Control Label="Causal de Desfase" Type="FieldControl" FieldName="Claro.ALM.Desfase.Causal" />
+              <Control Label="Responsable del Desfase" Type="FieldControl" FieldName="Claro.ALM.Desfase.Responsable" />
+              <Control Label="Desfase por Ambiente" Type="FieldControl" FieldName="Claro.ALM.Desfase.Ambiente" />
+            </Group>
+            <Group Label="Tiempo">
+              <Control Label="Duración Desfase" Type="FieldControl" FieldName="Claro.ALM.Desfase.Tiempo" />
+              <Control Label="Fecha Solicitud a Testing" Type="DateTimeControl" FieldName="Claro.ALM.SolicitudTesting.Fecha" />
+            </Group>
+          </Section>
+        </Page>
+      </WebLayout>
+    </FORM>
+  </WORKITEMTYPE>
+</witd:WITD>

@@ -1,0 +1,1288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Brief" refname="Custom.Brief">
+    <DESCRIPTION>Epics help teams effectively manage and groom their product backlog</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>The iteration within which this epic will be implemented</HELPTEXT>
+      </FIELD>
+      <FIELD name="Iteration ID" refname="System.IterationId" type="Integer" />
+      <FIELD name="External Link Count" refname="System.ExternalLinkCount" type="Integer" />
+      <FIELD name="Team Project" refname="System.TeamProject" type="String" reportable="dimension" />
+      <FIELD name="Parent" refname="System.Parent" type="Integer" />
+      <FIELD name="Remote Link Count" refname="System.RemoteLinkCount" type="Integer" />
+      <FIELD name="Comment Count" refname="System.CommentCount" type="Integer" />
+      <FIELD name="Hyperlink Count" refname="System.HyperLinkCount" type="Integer" />
+      <FIELD name="Attached File Count" refname="System.AttachedFileCount" type="Integer" />
+      <FIELD name="Node Name" refname="System.NodeName" type="String" />
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension">
+        <HELPTEXT>The area of the product with which this epic is associated</HELPTEXT>
+      </FIELD>
+      <FIELD name="Revised Date" refname="System.RevisedDate" type="DateTime" reportable="detail" />
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Area ID" refname="System.AreaId" type="Integer" />
+      <FIELD name="Authorized As" refname="System.AuthorizedAs" type="String" syncnamechanges="true" />
+      <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
+        <HELPTEXT>What the user will be able to do when this is implemented</HELPTEXT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension" />
+      <FIELD name="Authorized Date" refname="System.AuthorizedDate" type="DateTime" />
+      <FIELD name="Watermark" refname="System.Watermark" type="Integer" />
+      <FIELD name="Rev" refname="System.Rev" type="Integer" reportable="dimension" />
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension">
+        <HELPTEXT>The reason why the epic is in its current state</HELPTEXT>
+      </FIELD>
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>The person currently owning the epic</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Work Item Type" refname="System.WorkItemType" type="String" reportable="dimension" />
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
+      <FIELD name="Description" refname="System.Description" type="HTML">
+        <HELPTEXT>Description or acceptance criteria for this epic to be considered complete</HELPTEXT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="History" refname="System.History" type="History">
+        <HELPTEXT>Discussion thread plus automatic record of changes</HELPTEXT>
+      </FIELD>
+      <FIELD name="Related Link Count" refname="System.RelatedLinkCount" type="Integer" />
+      <FIELD name="Tags" refname="System.Tags" type="PlainText" />
+      <FIELD name="Board Column" refname="System.BoardColumn" type="String" reportable="dimension" />
+      <FIELD name="Board Column Done" refname="System.BoardColumnDone" type="Boolean" reportable="dimension" />
+      <FIELD name="Board Lane" refname="System.BoardLane" type="String" reportable="dimension" />
+      <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
+        <HELPTEXT>Priority for completing the epic, based on business goals</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <DEFAULT from="value" value="2" />
+      </FIELD>
+      <FIELD name="Backlog Priority" refname="Microsoft.VSTS.Common.BacklogPriority" type="Double" reportable="detail" />
+      <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <HELPTEXT>The build in which the epic was fixed</HELPTEXT>
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Effort" refname="Microsoft.VSTS.Scheduling.Effort" type="Double" reportable="measure" formula="sum">
+        <HELPTEXT>The estimated effort to implemented the epic</HELPTEXT>
+      </FIELD>
+      <FIELD name="Acceptance Criteria" refname="Microsoft.VSTS.Common.AcceptanceCriteria" type="HTML" />
+      <FIELD name="Value Area" refname="Microsoft.VSTS.Common.ValueArea" type="String">
+        <HELPTEXT>Business = Customer-facing epics; Architectural = Technology initiatives to support current and future business needs</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Architectural" />
+          <LISTITEM value="Business" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <DEFAULT from="value" value="Business" />
+      </FIELD>
+      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated Date" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated By" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <ALLOWEXISTINGVALUE />
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Target Date" refname="Microsoft.VSTS.Scheduling.TargetDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>The target date for completing the epic</HELPTEXT>
+      </FIELD>
+      <FIELD name="Business Value" refname="Microsoft.VSTS.Common.BusinessValue" type="Integer" reportable="measure" formula="sum">
+        <HELPTEXT>The business value for the customer when the epic is released</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefBusinessValue" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Time Criticality" refname="Microsoft.VSTS.Common.TimeCriticality" type="Double">
+        <HELPTEXT>How does the business value decay over time. Higher values make the epic more time critical</HELPTEXT>
+      </FIELD>
+      <FIELD name="Start Date" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>The date to start the task</HELPTEXT>
+      </FIELD>
+      <FIELD name="ID Previo" refname="Claro.ALM.IdPrevio" type="Integer" reportable="detail">
+        <READONLY />
+      </FIELD>
+      <FIELD name="Sub Estado" refname="Claro.ALM.SubEstado" type="String" reportable="detail">
+        <HELPTEXT>Sub Estado</HELPTEXT>
+        <WHEN field="Claro.ALM.Bloqueado" value="Si">
+          <READONLY />
+        </WHEN>
+        <REQUIRED />
+        <WHEN field="System.State" value="New">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="BriefSubEstadoNew" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="Removed">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="BriefSubEstadoRemoved" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="Done">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="BriefSubEstadoDone" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="System.State" value="In Progress">
+          <ALLOWEDVALUES expanditems="true">
+            <GLOBALLIST name="BriefSubEstadoInProgress" />
+          </ALLOWEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD name="Bloqueado" refname="Claro.ALM.Bloqueado" type="String" reportable="dimension">
+        <DEFAULT from="value" value="No" />
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefBlocked" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+      </FIELD>
+      <FIELD name="Área Negocio" refname="Claro.ALM.AreaNegocio" type="String" reportable="dimension">
+        <HELPTEXT>Área de negocio</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefAreaNegocio" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Arquitecto" refname="Claro.ALM.Arquitecto" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Arquitecto asociado al Brief</HELPTEXT>
+        <WHEN field="Claro.ALM.ParticipaArquitectura" value="Si">
+          <ALLOWEXISTINGVALUE />
+          <VALIDUSER />
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="Claro.ALM.ParticipaArquitectura" value="Si">
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Categoría Riesgo" refname="Claro.ALM.CategoriaRiesgo" type="String" reportable="dimension">
+        <HELPTEXT>Categoría Riesgo</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Cancelado">
+          <READONLY />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Finalizado">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefCategoriaRiesgo" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Clasificación" refname="Claro.ALM.Clasificacion" type="String" reportable="dimension">
+        <HELPTEXT>Clase de requerimiento</HELPTEXT>
+        <DEFAULT from="value" value="Requerimiento" />
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefClasificacion" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Consecutivo PRY" refname="Claro.ALM.ConsecutivoPRY" type="String" reportable="dimension">
+        <HELPTEXT>Consecutivo PRY</HELPTEXT>
+        <WHENNOT field="Claro.ALM.Clasificacion" value="Proyecto">
+          <READONLY />
+          <EMPTY />
+        </WHENNOT>
+      </FIELD>
+      <FIELD name="Coordinador de Portafolio" refname="Claro.ALM.CoordinadorPortafolio" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Coordinador de Portafolio</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Director Solicitante" refname="Claro.ALM.DirectorSolicitante" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Director que origina la necesidad de negocio</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Estrategia" refname="Claro.ALM.Estrategia" type="String" reportable="dimension">
+        <HELPTEXT>Iniciativa estratégica definida por la compañía</HELPTEXT>
+        <DEFAULT from="value" value="INICIATIVAS DE EFICIENCIA OPERATIVA" />
+        <WHEN field="Claro.ALM.SubEstado" value="Factible">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefEstrategia" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Gerente Solicitante" refname="Claro.ALM.GerenteSolicitante" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Gerente que origina la necesidad de negocio.</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Líder de Gestión Demanda" refname="Claro.ALM.LiderGestionDemanda" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Líder de Gestión Demanda designado para realizar tareas de análisis de Requerimientos</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Número de IDEA" refname="Claro.ALM.NumeroIDEA" type="String" reportable="dimension">
+        <HELPTEXT>Consecutivo de la solicitud registrado en 123MIC</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Factible">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Observaciones" refname="Claro.ALM.Observaciones" type="HTML">
+        <HELPTEXT>Observaciones</HELPTEXT>
+      </FIELD>
+      <FIELD name="Participa Arquitectura" refname="Claro.ALM.ParticipaArquitectura" type="String" reportable="dimension">
+        <HELPTEXT>Participa Arquitectura</HELPTEXT>
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion tecnica">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Factible">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefParticipaArquitectura" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Requerimientos No Funcionales" refname="Claro.ALM.RequerimientosNoFuncionales" type="HTML">
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD name="Responsable Negocio" refname="Claro.ALM.ResponsableNegocio" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>Responsable de negocio</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Segmento" refname="Claro.ALM.Segmento" type="String" reportable="dimension">
+        <HELPTEXT>Segmento</HELPTEXT>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Aseguramiento de Ingresos">
+          <COPY from="value" value="DDP ASI -JURIDICA" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corp. Asuntos Regulatorios y Rel. Institucionales">
+          <COPY from="value" value="DDP ASI -JURIDICA" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corp. Jurídico y Asuntos Societarios">
+          <COPY from="value" value="DDP ASI -JURIDICA" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativa de Comunicaciones">
+          <COPY from="value" value="DDP IFI/UEN/MYC/DIT" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativa de Gestión Humana">
+          <COPY from="value" value="DDP FINANCIERA /GH/ Logistica" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativa de Mercadeo y Comunicaciones">
+          <COPY from="value" value="DDP IFI/UEN/MYC/DIT" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativa Planeación Estratégica y Compras">
+          <COPY from="value" value="DDP FINANCIERA /GH/ Logistica" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo de Informática">
+          <COPY from="value" value="DDP IFI/UEN/MYC/DIT" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo Finanzas">
+          <COPY from="value" value="DDP FINANCIERA /GH/ Logistica" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo Ingeniería y Operación">
+          <COPY from="value" value="DDP IFI/UEN/MYC/DIT" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo Producto Personas Prepago">
+          <COPY from="value" value="DPP PRODUCTO PREPAGO / UNP" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo Producto Personas Pospago">
+          <COPY from="value" value="DDP PRODUCTO POSPAGO" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Corporativo Servicios Valor Agregado e Innovación">
+          <COPY from="value" value="DDP SVA" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. de Auditoría">
+          <COPY from="value" value="DDP ASI -JURIDICA" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Ejecutiva Unidad Negocio Empresas">
+          <COPY from="value" value="DDP IFI/UEN/MYC/DIT" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Ejecutiva Unidad Negocio Hogares">
+          <COPY from="value" value="DDP DSO/UNH" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Ejecutiva Unidad Negocio Personas">
+          <COPY from="value" value="DPP PRODUCTO PREPAGO / UNP" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Experiencia al Cliente">
+          <COPY from="value" value="DDP EXP/DIG" />
+        </WHEN>
+        <WHEN field="Claro.ALM.AreaNegocio" value="Dir. Soporte a la Operación">
+          <COPY from="value" value="DDP DSO/UNH" />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefSegmento" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Tipo de Beneficio" refname="Claro.ALM.TipoBeneficio" type="String" reportable="dimension">
+        <HELPTEXT>Tipo de Beneficio</HELPTEXT>
+        <DEFAULT from="value" value="Aseguramiento de ingresos" />
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefTipoBeneficio" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="Complejidad" refname="Claro.ALM.Complejidad" type="Integer" reportable="dimension">
+        <HELPTEXT>Complejidad del Brief</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <GLOBALLIST name="BriefComplejidad" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD name="SECreadoFecha_chk" refname="Claro.ALM.SECreadoFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Creado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Creado">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECreadoFecha" refname="Claro.ALM.SECreadoFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECreadoFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEFactibleFecha_chk" refname="Claro.ALM.SEFactibleFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Factible">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Factible">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEFactibleFecha" refname="Claro.ALM.SEFactibleFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEFactibleFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECoCreacionFuncionalFecha_chk" refname="Claro.ALM.SECoCreacionFuncionalFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECoCreacionFuncionalFecha" refname="Claro.ALM.SECoCreacionFuncionalFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECoCreacionFuncionalFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECoCreacionTecnicaFecha_chk" refname="Claro.ALM.SECoCreacionTecnicaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Co-creacion tecnica">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion tecnica">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECoCreacionTecnicaFecha" refname="Claro.ALM.SECoCreacionTecnicaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECoCreacionTecnicaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEEstimadoFecha_chk" refname="Claro.ALM.SEEstimadoFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Estimado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Estimado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEEstimadoFecha" refname="Claro.ALM.SEEstimadoFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEEstimadoFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEAprobadoJuntaFecha_chk" refname="Claro.ALM.SEAprobadoJuntaFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Aprobado Junta">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEAprobadoJuntaFecha" refname="Claro.ALM.SEAprobadoJuntaFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEAprobadoJuntaFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEFinalizadoFecha_chk" refname="Claro.ALM.SEFinalizadoFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Finalizado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Finalizado">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEFinalizadoFecha" refname="Claro.ALM.SEFinalizadoFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SEFinalizadoFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECanceladoFecha_chk" refname="Claro.ALM.SECanceladoFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHEN field="Claro.ALM.SubEstado" value="Cancelado">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHENNOTCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Cancelado">
+          <COPY from="value" value="0" />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECanceladoFecha" refname="Claro.ALM.SECanceladoFecha" type="DateTime" reportable="dimension">
+        <WHEN field="Claro.ALM.SECanceladoFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECreadoPor" refname="Claro.ALM.SECreadoPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECreadoFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEFactiblePor" refname="Claro.ALM.SEFactiblePor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEFactibleFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SECoCreacionFuncionalPor" refname="Claro.ALM.SECoCreacionFuncionalPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECoCreacionFuncionalFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SECoCreacionTecnicaPor" refname="Claro.ALM.SECoCreacionTecnicaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECoCreacionTecnicaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEEstimadoPor" refname="Claro.ALM.SEEstimadoPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEEstimadoFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEAprobadoJuntaPor" refname="Claro.ALM.SEAprobadoJuntaPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEAprobadoJuntaFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEFinalizadoPor" refname="Claro.ALM.SEFinalizadoPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SEFinalizadoFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SECanceladoPor" refname="Claro.ALM.SECanceladoPor" type="String" syncnamechanges="true" reportable="dimension">
+        <ALLOWEXISTINGVALUE />
+        <WHEN field="Claro.ALM.SECanceladoFecha_chk" value="1">
+          <COPY from="currentuser" />
+        </WHEN>
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="SEFactibleBloqueadoSIFecha_chk" refname="Claro.ALM.SEFactibleBloqueadoSIFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="Si">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Factible">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEFactibleBloqueadoSIFecha" refname="Claro.ALM.SEFactibleBloqueadoSIFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SEFactibleBloqueadoSIFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEFactibleBloqueadoNOFecha_chk" refname="Claro.ALM.SEFactibleBloqueadoNOFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="No">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Factible">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEFactibleBloqueadoNOFecha" refname="Claro.ALM.SEFactibleBloqueadoNOFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SEFactibleBloqueadoNOFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECCreacionFuncionalBloqueadoSIFecha_chk" refname="Claro.ALM.SECCreacionFuncionalBloqueadoSIFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="Si">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECCreacionFuncionalBloqueadoSIFecha" refname="Claro.ALM.SECCreacionFuncionalBloqueadoSIFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SECCreacionFuncionalBloqueadoSIFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECCreacionFuncionalBloqueadoNOFecha_chk" refname="Claro.ALM.SECCreacionFuncionalBloqueadoNOFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="No">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion funcional">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECCreacionFuncionalBloqueadoNOFecha" refname="Claro.ALM.SECCreacionFuncionalBloqueadoNOFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SECCreacionFuncionalBloqueadoNOFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECCreacionTecnicaBloqueadoSIFecha_chk" refname="Claro.ALM.SECCreacionTecnicaBloqueadoSIFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="Si">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion tecnica">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECCreacionTecnicaBloqueadoSIFecha" refname="Claro.ALM.SECCreacionTecnicaBloqueadoSIFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SECCreacionTecnicaBloqueadoSIFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SECCreacionTecnicaBloqueadoNOFecha_chk" refname="Claro.ALM.SECCreacionTecnicaBloqueadoNOFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="No">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Co-creacion tecnica">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SECCreacionTecnicaBloqueadoNOFecha" refname="Claro.ALM.SECCreacionTecnicaBloqueadoNOFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SECCreacionTecnicaBloqueadoNOFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEEstimadoBloqueadoSIFecha_chk" refname="Claro.ALM.SEEstimadoBloqueadoSIFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="Si">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Estimado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEEstimadoBloqueadoSIFecha" refname="Claro.ALM.SEEstimadoBloqueadoSIFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SEEstimadoBloqueadoSIFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+      <FIELD name="SEEstimadoBloqueadoNOFecha_chk" refname="Claro.ALM.SEEstimadoBloqueadoNOFecha_chk" type="Integer">
+        <DEFAULT from="value" value="0" />
+        <WHENNOTCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOTCHANGED>
+        <WHENNOT field="Claro.ALM.Bloqueado" value="No">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.Bloqueado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+        <WHENNOT field="Claro.ALM.SubEstado" value="Estimado">
+          <COPY from="value" value="0" />
+          <EMPTY />
+        </WHENNOT>
+        <WHENCHANGED field="Claro.ALM.SubEstado">
+          <COPY from="value" value="1" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD name="SEEstimadoBloqueadoNOFecha" refname="Claro.ALM.SEEstimadoBloqueadoNOFecha" type="DateTime" reportable="detail">
+        <WHEN field="Claro.ALM.SEEstimadoBloqueadoNOFecha_chk" value="1">
+          <SERVERDEFAULT from="clock" />
+        </WHEN>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Done">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.BusinessValue">
+              <READONLY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="In Progress">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="New">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <ALLOWEXISTINGVALUE />
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Removed" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="Removed" to="New">
+          <REASONS>
+            <DEFAULTREASON value="Reconsidering the epic" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="New">
+          <REASONS>
+            <DEFAULTREASON value="Moved to the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="New">
+          <REASONS>
+            <DEFAULTREASON value="Moved to the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="" to="New">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Claro.ALM.SubEstado">
+              <COPY from="value" value="Creado" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="New" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="New" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work finished" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <ALLOWEXISTINGVALUE />
+              <COPY from="currentuser" />
+              <VALIDUSER />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="New" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Implementation started" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Additional work found" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
+        <Group Margin="(4,0,0,0)">
+          <Column PercentWidth="90">
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
+          </Column>
+          <Column PercentWidth="10">
+            <Control FieldName="System.ID" Type="FieldControl" ControlFontSize="large" LabelPosition="Top" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="100">
+            <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="Ite&amp;ration" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group Margin="(10,0,0,0)">
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Assi&amp;gned To" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="Stat&amp;e" LabelPosition="Left" />
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="&amp;Area" LabelPosition="Left" />
+                <Control FieldName="System.Reason" Type="FieldControl" Label="Reason" LabelPosition="Left" ReadOnly="True" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.StartDate" Type="FieldControl" Label="Start Date" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.TargetDate" Type="DateTimeControl" Label="Target Date" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Details">
+              <Column PercentWidth="100">
+                <Control FieldName="Microsoft.VSTS.Common.Priority" Type="FieldControl" Label="Priority" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Scheduling.Effort" Type="FieldControl" Label="Effort" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.BusinessValue" Type="FieldControl" Label="Business Value" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.TimeCriticality" Type="FieldControl" Label="Time Criticality" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.ValueArea" Type="FieldControl" Label="Value area" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <TabGroup>
+              <Tab Label="Description">
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Features">
+                <Control Type="LinksControl" Name="Hierarchy" Label="" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="include">
+                      <Filter LinkType="System.LinkTypes.Hierarchy" FilterOn="forwardname" />
+                    </WorkItemLinkFilters>
+                    <ExternalLinkFilters FilterType="excludeAll" />
+                    <WorkItemTypeFilters FilterType="include">
+                      <Filter WorkItemType="Feature" />
+                    </WorkItemTypeFilters>
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+            </TabGroup>
+          </Column>
+          <Column PercentWidth="50">
+            <TabGroup Margin="(5,0,0,0)">
+              <Tab Label="Acceptance Criteria">
+                <Control FieldName="Microsoft.VSTS.Common.AcceptanceCriteria" Type="HtmlFieldControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="History">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Links">
+                <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+                  <LinksControlOptions>
+                    <LinkColumns>
+                      <LinkColumn RefName="System.Id" />
+                      <LinkColumn RefName="System.WorkItemType" />
+                      <LinkColumn RefName="System.Title" />
+                      <LinkColumn RefName="System.AssignedTo" />
+                      <LinkColumn RefName="System.State" />
+                      <LinkColumn LinkAttribute="System.Links.Comment" />
+                    </LinkColumns>
+                    <WorkItemLinkFilters FilterType="includeAll" />
+                    <ExternalLinkFilters FilterType="includeAll" />
+                    <WorkItemTypeFilters FilterType="includeAll" />
+                  </LinksControlOptions>
+                </Control>
+              </Tab>
+              <Tab Label="Attachments">
+                <Control Type="AttachmentsControl" Label="" LabelPosition="Top" />
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+      <WebLayout>
+        <SystemControls>
+          <Control Type="FieldControl" FieldName="System.Title" EmptyText="Enter title" />
+          <Control Label="Assi&amp;gned To" Type="FieldControl" FieldName="System.AssignedTo" />
+          <Control Label="Stat&amp;e" Type="FieldControl" FieldName="System.State" />
+          <Control Label="Reason" Type="FieldControl" FieldName="System.Reason" />
+          <Control Label="&amp;Area" Type="WorkItemClassificationControl" FieldName="System.AreaPath" />
+          <Control Label="Ite&amp;ration" Type="WorkItemClassificationControl" FieldName="System.IterationPath" />
+          <Control Label="History" Type="WorkItemLogControl" FieldName="System.History" />
+          <Control Label="Links" Type="LinksControl" Name="Links" />
+          <Control Label="Attachments" Type="AttachmentsControl" Name="Attachments" />
+        </SystemControls>
+        <Page Label="Detalles" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Control">
+              <Control Label="ID Previo:" Type="FieldControl" FieldName="Claro.ALM.IdPrevio" />
+              <Control Label="Sub Estado:" Type="FieldControl" FieldName="Claro.ALM.SubEstado" />
+            </Group>
+            <Group Label="Objetivo y alcance">
+              <Control Label="Objetivo y alcance" Type="HtmlFieldControl" FieldName="System.Description" EmptyText="&lt;Escriba aquí visión y alcance de la solicitud&gt;" />
+            </Group>
+            <Group Label="Observaciones">
+              <Control Label="Observaciones" Type="HtmlFieldControl" FieldName="Claro.ALM.Observaciones" EmptyText="&lt;Comentarios&gt;" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Identificación">
+              <Control Label="Número de IDEA:" Type="FieldControl" FieldName="Claro.ALM.NumeroIDEA" />
+              <Control Label="Consecutivo PRY:" Type="FieldControl" FieldName="Claro.ALM.ConsecutivoPRY" />
+            </Group>
+            <Group Label="Clasificación">
+              <Control Label="Clasificación:" Type="FieldControl" FieldName="Claro.ALM.Clasificacion" />
+              <Control Label="Estrategia:" Type="FieldControl" FieldName="Claro.ALM.Estrategia" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Estado">
+              <Control Label="Bloqueado:" Type="FieldControl" FieldName="Claro.ALM.Bloqueado" />
+              <Control Label="Valor para Negocio:" Type="FieldControl" FieldName="Microsoft.VSTS.Common.BusinessValue" />
+              <Control Label="Complejidad:" Type="FieldControl" FieldName="Claro.ALM.Complejidad" />
+            </Group>
+            <Group Label="Beneficio y Riesgo">
+              <Control Label="Tipo de Beneficio:" Type="FieldControl" FieldName="Claro.ALM.TipoBeneficio" />
+              <Control Label="Categoría del Riesgo:" Type="FieldControl" FieldName="Claro.ALM.CategoriaRiesgo" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Actores" LayoutMode="EqualColumns">
+          <Section>
+            <Group Label="Gerencia">
+              <Control Label="Gerente solicitante:" Type="FieldControl" FieldName="Claro.ALM.GerenteSolicitante" />
+              <Control Label="Responsable de negocio:" Type="FieldControl" FieldName="Claro.ALM.ResponsableNegocio" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Dirección">
+              <Control Label="Director solicitante:" Type="FieldControl" FieldName="Claro.ALM.DirectorSolicitante" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Otros">
+              <Control Label="Área de Negocio:" Type="FieldControl" FieldName="Claro.ALM.AreaNegocio" />
+              <Control Label="Segmento:" Type="FieldControl" FieldName="Claro.ALM.Segmento" />
+              <Control Label="Participa arquitectura:" Type="FieldControl" FieldName="Claro.ALM.ParticipaArquitectura" />
+              <Control Label="Arquitecto:" Type="FieldControl" FieldName="Claro.ALM.Arquitecto" />
+              <Control Label="Coordinador de Portafolio:" Type="FieldControl" FieldName="Claro.ALM.CoordinadorPortafolio" />
+              <Control Label="Líder de Gestión Demanda:" Type="FieldControl" FieldName="Claro.ALM.LiderGestionDemanda" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Ultimas Fechas Sub-Estados" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Fechas-Sub-Estados">
+              <Control Label="Fecha Creado" Type="FieldControl" FieldName="Claro.ALM.SECreadoFecha" ReadOnly="True" />
+              <Control Label="Fecha Factible" Type="FieldControl" FieldName="Claro.ALM.SEFactibleFecha" ReadOnly="True" />
+              <Control Label="Fecha Co-Creacion Funcional" Type="FieldControl" FieldName="Claro.ALM.SECoCreacionFuncionalFecha" ReadOnly="True" />
+              <Control Label="Fecha Co-Creacion Tecnica" Type="FieldControl" FieldName="Claro.ALM.SECoCreacionTecnicaFecha" ReadOnly="True" />
+              <Control Label="Fecha Estimado" Type="FieldControl" FieldName="Claro.ALM.SEEstimadoFecha" ReadOnly="True" />
+              <Control Label="Fecha Aprobado Junta" Type="FieldControl" FieldName="Claro.ALM.SEAprobadoJuntaFecha" ReadOnly="True" />
+              <Control Label="Fecha Finalizado" Type="FieldControl" FieldName="Claro.ALM.SEFinalizadoFecha" ReadOnly="True" />
+              <Control Label="Fecha Cancelado" Type="FieldControl" FieldName="Claro.ALM.SECanceladoFecha" ReadOnly="True" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Usuario-Sub-Estados">
+              <Control Label="Creado Por" Type="FieldControl" FieldName="Claro.ALM.SECreadoPor" ReadOnly="True" />
+              <Control Label="Factible Por" Type="FieldControl" FieldName="Claro.ALM.SEFactiblePor" ReadOnly="True" />
+              <Control Label="CoCreacion Funcional Por" Type="FieldControl" FieldName="Claro.ALM.SECoCreacionFuncionalPor" ReadOnly="True" />
+              <Control Label="CoCreacion Tecnica Por" Type="FieldControl" FieldName="Claro.ALM.SECoCreacionTecnicaPor" ReadOnly="True" />
+              <Control Label="Estimado Por" Type="FieldControl" FieldName="Claro.ALM.SEEstimadoPor" ReadOnly="True" />
+              <Control Label="AprobadoJunta Por" Type="FieldControl" FieldName="Claro.ALM.SEAprobadoJuntaPor" ReadOnly="True" />
+              <Control Label="Finalizado Por" Type="FieldControl" FieldName="Claro.ALM.SEFinalizadoPor" ReadOnly="True" />
+              <Control Label="Cancelado Por" Type="FieldControl" FieldName="Claro.ALM.SECanceladoPor" ReadOnly="True" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Fechas Bloqueado">
+              <Control Label="Factible Bloqueado Si:" Type="FieldControl" FieldName="Claro.ALM.SEFactibleBloqueadoSIFecha" ReadOnly="True" />
+              <Control Label="Factible Bloqueado No:" Type="FieldControl" FieldName="Claro.ALM.SEFactibleBloqueadoNOFecha" ReadOnly="True" />
+              <Control Label="CCFuncional Bloqueado Si:" Type="FieldControl" FieldName="Claro.ALM.SECCreacionFuncionalBloqueadoSIFecha" ReadOnly="True" />
+              <Control Label="CCFuncional Bloqueado No:" Type="FieldControl" FieldName="Claro.ALM.SECCreacionFuncionalBloqueadoNOFecha" ReadOnly="True" />
+              <Control Label="CCTecnica Bloqueado Si:" Type="FieldControl" FieldName="Claro.ALM.SECCreacionTecnicaBloqueadoSIFecha" ReadOnly="True" />
+              <Control Label="CCTecnica Bloqueado No:" Type="FieldControl" FieldName="Claro.ALM.SECCreacionTecnicaBloqueadoNOFecha" ReadOnly="True" />
+              <Control Label="Estimado Bloqueado Si:" Type="FieldControl" FieldName="Claro.ALM.SEEstimadoBloqueadoSIFecha" ReadOnly="True" />
+              <Control Label="Estimado Bloqueado No:" Type="FieldControl" FieldName="Claro.ALM.SEEstimadoBloqueadoNOFecha" ReadOnly="True" />
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Tareas" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Tareas">
+              <Control Type="LinksControl" Name="Tareas">
+                <LinksControlOptions ViewMode="Dynamic">
+                  <WorkItemTypeFilters>
+                    <Filter WorkItemType="Task" />
+                  </WorkItemTypeFilters>
+                  <Columns>
+                    <Column Name="System.Id" />
+                    <Column Name="Microsoft.VSTS.CMMI.TaskType" />
+                    <Column Name="Claro.ALM.Gerencia" />
+                    <Column Name="System.AssignedTo" />
+                    <Column Name="System.State" />
+                  </Columns>
+                </LinksControlOptions>
+              </Control>
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Requerimientos Negocio" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Requerimientos de Negocio">
+              <Control Type="LinksControl" Name="ReqsNegocio">
+                <LinksControlOptions>
+                  <Columns>
+                    <Column Name="System.Id" />
+                    <Column Name="System.Title" />
+                    <Column Name="System.AssignedTo" />
+                    <Column Name="System.State" />
+                    <Column Name="System.Reason" />
+                  </Columns>
+                  <LinkFilters>
+                    <WorkItemLinkFilter Type="System.LinkTypes.Hierarchy-Forward" />
+                  </LinkFilters>
+                  <WorkItemTypeFilters>
+                    <Filter WorkItemType="Requerimiento de Negocio" />
+                  </WorkItemTypeFilters>
+                </LinksControlOptions>
+              </Control>
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Requerimientos Línea Producto" LayoutMode="FirstColumnWide">
+          <Section>
+            <Group Label="Requerimientos de Línea Producto">
+              <Control Type="LinksControl" Name="ReqsLineaProducto">
+                <LinksControlOptions>
+                  <Columns>
+                    <Column Name="Claro.ALM.LineaProducto" />
+                    <Column Name="System.State" />
+                    <Column Name="Claro.ALM.GerenciaDesarrollo" />
+                    <Column Name="Claro.ALM.FechaPlaneadaDespliegue" />
+                    <Column Name="Claro.ALM.Fase" />
+                    <Column Name="Claro.ALM.FechaDespliegue" />
+                  </Columns>
+                  <LinkFilters>
+                    <WorkItemLinkFilter Type="System.LinkTypes.Hierarchy-Forward" />
+                  </LinkFilters>
+                  <WorkItemTypeFilters>
+                    <Filter WorkItemType="Requerimiento por Linea Producto" />
+                  </WorkItemTypeFilters>
+                </LinksControlOptions>
+              </Control>
+            </Group>
+          </Section>
+        </Page>
+        <Page Label="Requerimientos No Funcionales" LayoutMode="EqualColumns">
+          <Section>
+            <Group Label="Requerimientos No Funcionales">
+              <Control Label="Requerimientos No Funcionales" Type="HtmlFieldControl" FieldName="Claro.ALM.RequerimientosNoFuncionales" />
+            </Group>
+          </Section>
+          <Section>
+            <Group Label="Definiciones">
+              <Control Type="WebpageControl">
+                <WebpageControlOptions>
+                  <Content>&lt;font face="sans-serif" size=3&gt;&lt;b&gt;Carga:&lt;/b&gt; Número de usuarios totales en un momento dado&lt;/br&gt;
+									&lt;b&gt;Concurrencia:&lt;/b&gt; Número de usuarios que realizan una misma tarea de forma simultánea&lt;/br&gt;
+									&lt;b&gt;Confiabilidad:&lt;/b&gt; Probabilidad en la que un producto realizará su función prevista sin incidentes en un período de tiempo especificado y bajo condiciones indicadas&lt;/br&gt;
+									&lt;b&gt;Desempeño:&lt;/b&gt; Medición de la velocidad o tiempo de respuesta con que se realiza  una tarea o proceso&lt;/br&gt;
+									&lt;b&gt;Disponibilidad:&lt;/b&gt; Probabilidad de que un servicio funcione adecuadamente  en cualquier momento&lt;/br&gt;
+									&lt;b&gt;Interfaz:&lt;/b&gt; Conexión física o funcional entre dos sistemas o dispositivos (Interfaz gráfica, Interfaz táctil, mouse, puertos)&lt;/br&gt;
+									&lt;b&gt;Interoperabilidad:&lt;/b&gt; Habilidad de dos o más sistemas o componentes para intercambiar información y utilizar la información intercambiada&lt;/br&gt;
+									&lt;b&gt;Mantenibilidad:&lt;/b&gt; Cantidad de esfuerzo requerido para conservar un sistema en funcionamiento normal, restituirlo después de una falla o ampliar su alcance&lt;/br&gt;
+									&lt;b&gt;Portabilidad:&lt;/b&gt; Capacidad de un sistema de ejecutarse en diferentes plataformas o arquitecturas con mínimas modificaciones&lt;/br&gt;
+									&lt;b&gt;Seguridad de la Información:&lt;/b&gt; Aplicación de barreras y procedimientos que resguardan el acceso a los datos y sólo permiten acceder a ellos a las personas autorizadas&lt;/br&gt;
+									&lt;b&gt;Seguridad Informática:&lt;/b&gt; Seguridad física de la plataforma informática&lt;/br&gt;
+									&lt;b&gt;Usabilidad:&lt;/b&gt; Facilidad con que las personas pueden utilizar un sistema, con el fin de alcanzar un objetivo concreto&lt;/br&gt;
+									&lt;b&gt;Volúmen:&lt;/b&gt; Número de registros manejados en un proceso&lt;/br&gt;
+									&lt;b&gt;Auditoría&lt;/b&gt; &lt;/br&gt;
+									&lt;b&gt;Crecimiento Proyectado&lt;/b&gt; </Content>
+                </WebpageControlOptions>
+              </Control>
+            </Group>
+          </Section>
+        </Page>
+      </WebLayout>
+    </FORM>
+  </WORKITEMTYPE>
+</witd:WITD>
